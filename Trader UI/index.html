@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+    <title>Trader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+    <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+    <meta name="author" content="Codrops" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/style3.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div>
+    <section class="main_page">
+        <div class="top">
+            <img src="images/page_top_end.jpg" alt="top">
+        </div>
+        <header class="sticky-top">
+            <div class="layer">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html">
+                            <span style="font-size:35px">Trad<span style="font-size:35px;color:yellow">er</span></span>
+                        </a>
+                        <div id="navbarSupportedContent" class="collapse navbar-collapse sidenav">
+                            <a href="javascript:void(0)" class="closebtn d-lg-none" id="cls-btn">&times;</a>
+                            <ul class="navbar-nav ml-lg-auto">
+                                <li>
+                                    <a href="index.html" class="active">Home</a>
+                                </li>
+                                <li>
+                                    <a href="order.html">Order</a>
+                                </li>
+                                <li>
+                                    <a href="transcation.html">Transaction</a>
+                                </li>
+                                <li>
+                                    <a href="yours.html">Yours</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <button type="button" class="toggler" id="toggle-button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <section class="index-welcomenote">
+            <div class="container">
+                <ul class="row">
+                    <li class="col-md-9 col-xl-10" data-aos="fade-up" data-aos-duration="1000">
+                        <h4>welcome to the
+                            <span>Trader </span>!
+                        </h4>
+                        <h6>Here , you can trade any allowed items.
+                        </h6>
+                    </li>
+                    <li class="col-md-3 col-xl-2 text-center text-md-right text-xl-center" data-aos="fade-up" data-aos-duration="1000">
+                        <img src="images/trader.jpg" alt="chef">
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="index-recipies">
+            <div class="container">
+                <h4 data-aos="fade-up" data-aos-duration="1000">read all of the commodities</h4>
+                <h6 data-aos="fade-up" data-aos-duration="1000">Please feel free and hope we can meet you needs
+                </h6>
+                <ul class="row" id="product">
+                    <li class="col-sm-6 col-md-4">
+                        <figure data-aos="fade-up" data-aos-duration="800">
+                            <img src="images/cotton.jpg" alt="cotton" class="img-responsive">
+                            <div class="overlay">
+                                <h5>—— Cotton ——</h5>
+                                <ul class="date" id="cotton">
+                                </ul>
+                            </div>
+                        </figure>
+                    </li>
+                    <li class="col-sm-6 col-md-4">
+                        <figure data-aos="fade-up" data-aos-duration="1000">
+                            <a href="item.html?item=tea" data-toggle="lightbox" data-gallery="example-gallery">
+                                <img src="images/tea.jpg" alt="tea" class="img-responsive">
+                                <div class="overlay">
+                                    <h5>—— Tea ——</h5>
+                                    <ul class="date" id="tea">
+                                    </ul>
+                                </div>
+                            </a>
+                        </figure>
+                    </li>
+                    <li class="col-sm-6 col-md-4">
+                        <figure data-aos="fade-up" data-aos-duration="800">
+                            <a href="item.html?item=pta" data-toggle="lightbox" data-gallery="example-gallery">
+                                <img src="images/PTA.jpg" alt="PTA" class="img-responsive">
+                                <div class="overlay">
+                                    <h5>—— PTA ——</h5>
+                                    <ul class="date"  id="pta">
+                                    </ul>
+                                </div>
+                            </a>
+                        </figure>
+                    </li>
+                    <li class="col-sm-6 col-md-4">
+                        <figure data-aos="fade-up" data-aos-duration="800">
+                            <a href="item.html?item=fe" data-toggle="lightbox" data-gallery="example-gallery">
+                                <img src="images/Fe.jpg" alt="Fe" class="img-responsive">
+                                <div class="overlay">
+                                    <h5>—— Fe ——</h5>
+                                    <span>Posted on:3-8-2018</span>
+                                    <span>In:Food & Drinks</span>
+                                </div>
+                            </a>
+                        </figure>
+                    </li>
+                    <li class="col-sm-6 col-md-4">
+                        <figure data-aos="fade-up" data-aos-duration="1000">
+                            <a href="item.html?item=cu" data-toggle="lightbox" data-gallery="example-gallery">
+                                <img src="images/Cu.jpg" alt="Cu" class="img-responsive">
+                                <div class="overlay">
+                                    <h5>—— Cu ——</h5>
+                                    <span>Posted on:3-8-2018</span>
+                                    <span>In:Food & Drinks</span>
+                                </div>
+                            </a>
+                        </figure>
+                    </li>
+                    <li class="col-sm-6 col-md-4">
+                        <figure data-aos="fade-up" data-aos-duration="1200">
+                            <a href="item.html?item=jade" data-toggle="lightbox" data-gallery="example-gallery">
+                                <img src="images/jade.jpg" alt="jade" class="img-responsive">
+                                <div class="overlay">
+                                    <h5>—— Jade ——</h5>
+                                    <span>Posted on:3-8-2018</span>
+                                    <span>In:Food & Drinks</span>
+                                </div>
+                            </a>
+                        </figure>
+                    </li>
+                    <li class="col-sm-6 col-md-4">
+                        <figure data-aos="fade-up" data-aos-duration="800">
+                            <a href="item.html?item=oil" data-toggle="lightbox" data-gallery="example-gallery">
+                                <img src="images/oil.jpg" alt="oil" class="img-responsive">
+                                <div class="overlay">
+                                    <h5>—— Oil ——</h5>
+                                    <span>Posted on:3-8-2018</span>
+                                    <span>In:Food & Drinks</span>
+                                </div>
+                            </a>
+                        </figure>
+                    </li>
+                </ul>
+                <div class="blog-btn-sec" data-aos="fade-up" data-aos-duration="1000">
+                    <a href="order.html" class="blog-btn">go to Order</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="index-services">
+            <div class="container">
+                <h4 data-aos="fade-up" data-aos-duration="1000">what you can expect from
+                    <span data-aos="fade-up" data-aos-duration="1000">sarah</span>!</h4>
+                <h6 data-aos="fade-up" data-aos-duration="1000">and am a food blogger, please feel free to check my latest food recipes
+                </h6>
+                <ul class="row">
+                    <li class="col-md-3" data-aos="fade-up" data-aos-duration="1000">
+                        <i class="fa fa-cutlery" aria-hidden="true"></i>
+                        <h3>magic</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                            standard dummy text ever since the...</p>
+                    </li>
+                    <li class="col-md-3" data-aos="fade-up" data-aos-duration="1200">
+                        <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                        <h3>sponsors</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                            standard dummy text ever since the...</p>
+                    </li>
+                    <li class="col-md-3" data-aos="fade-up" data-aos-duration="1400">
+                        <i class="fa fa-telegram" aria-hidden="true"></i>
+                        <h3>foodies</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                            standard dummy text ever since the...</p>
+                    </li>
+                    <li class="col-md-3" data-aos="fade-up" data-aos-duration="1600">
+                        <i class="fa fa-pagelines" aria-hidden="true"></i>
+                        <h3>super spices</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                            standard dummy text ever since the...</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="index-contact">
+            <div class="layer">
+                <div class="container" data-aos="fade-up" data-aos-duration="1000">
+                    <h5>Subscribe to our monthly newsletter</h5>
+                    <h6>Subscribe to our monthly newsletter and get up to date with our latest trends and fashions...</h6>
+                    <form>
+                        <ul class="row">
+                            <li class="col-12 col-md-6">
+                                <input type="text" class="w-100" required placeholder="Enter your Name">
+                            </li>
+                            <li class="col-12 col-md-6">
+                                <input type="text" class="w-100" required placeholder="Enter your Email Id">
+                            </li>
+                        </ul>
+                        <button type="submit">Subscribe now</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <nav class="navbar navbar-expand-sm navbar-light">
+                    <a class="navbar-brand" href="index.html">
+                        <span style="font-size:35px">Trad<span style="font-size:35px;color:yellow">er</span></span>
+                    </a>
+
+                    <div class="footer-nav ml-md-auto">
+                        <ul class="navbar-nav ml-sm-auto">
+                            <li class="nav-item">
+                                <a class="nav-link text-white active" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white active" href="order.html">Order</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white active" href="transcation.html">Transaction</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="yours.html">Yours</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
+        </footer>
+
+        <div class="bottom">
+            <img src="images/page_top_end.jpg" alt="top">
+        </div>
+        <div class="scrolltop" style="display: block;">
+            <div class="scroll icon">
+                <i class="fa fa-angle-up"></i>
+            </div>
+        </div>
+    </section>
+    <section class="login_register">
+        <div id="container_demo" >
+            <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+            <a class="hiddenanchor" id="toregister"></a>
+            <a class="hiddenanchor" id="tologin"></a>
+            <div id="wrapper">
+                <div id="login" class="animate form">
+                    <form id="form_login" autocomplete="on" method="post">
+                        <h1>Log in</h1>
+                        <p>
+                            <label for="username" class="uname" data-icon="u" > Your username </label>
+                            <input id="username" name="username" required type="text" placeholder="myusername"/>
+                        </p>
+                        <p>
+                            <label for="password" class="youpasswd" data-icon="p"> Your password </label>
+                            <input id="password" name="password" required type="password" placeholder="eg. X8df!90EO" />
+                        </p>
+                        <p class="login button">
+                            <input type="submit" value="Login" onclick="login()"/>
+                        </p>
+                        <p class="change_link">
+                            Not a member yet ?
+                            <a href="#toregister" class="to_register">Join us</a>
+                        </p>
+                    </form>
+                </div>
+
+                <div id="register" class="animate form">
+                    <form id="form_register" autocomplete="on">
+                        <h1> Sign up </h1>
+                        <p>
+                            <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+                            <input id="usernamesignup" name="usernamesignup" required type="text" placeholder="mysuperusername690" />
+                        </p>
+                        <p>
+                            <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
+                            <input id="emailsignup" name="emailsignup" required type="email" placeholder="mysupermail@mail.com"/>
+                        </p>
+                        <p>
+                            <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+                            <input id="passwordsignup" name="passwordsignup" required type="password" placeholder="eg. X8df!90EO"/>
+                        </p>
+                        <p>
+                            <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+                            <input id="passwordsignup_confirm" name="passwordsignup_confirm" required type="password" placeholder="eg. X8df!90EO"/>
+                        </p>
+                        <p class="signin button">
+                            <input type="submit" value="Sign up" onclick="register()"/>
+                        </p>
+                        <p class="change_link">
+                            Already a member ?
+                            <a href="#tologin" class="to_register"> Go and log in </a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/script.js"></script>
+</body>
+<script>
+    console.log(sessionStorage.getItem("username"));
+    if(sessionStorage.getItem("username")===null){
+        $(".login_register").css({
+            "position":"fixed", "left":"30%" ,"top":"5%"
+        });
+        $(".main_page").css({
+            "z-index":"-1","opacity":"0.3","pointer-events":"none"
+        })
+    }
+    else{
+        $(".login_register").css({"display":"none"});
+        $(".main_page").css({"pointer-events":"auto","opacity":1});
+    }
+    function login(){
+        /*
+        $.ajax({
+            type:"GET",
+            url:"http://localhost:8080",
+            data:$("#form_login").serialize(),
+            success:function(){
+              if(document.getElementsByName("username")[0].value!==null &&document.getElementsByName("password")[0].value!==null ) {
+                  sessionStorage.setItem("username", document.getElementsByName("username")[0].value);
+              }
+            }
+        })
+        */
+    }
+    function register(){
+        $.ajax({
+            type:"GET",
+            url:"http://localhost:8080",
+            data:$("#form_register").serialize(),
+            success:function(){
+                alert("register done!");
+            }
+        })
+    }
+    /*
+    $.ajax({
+        type:"GET",
+        url:"http://localhost:8080",
+        dataType:"json",
+        success:function(data){
+            var arr=[];
+            $.each(data,function(index,product){
+                var html="<li class=\"col-sm-6 col-md-4\">\n" +
+                    "                    <figure data-aos=\"fade-up\" data-aos-duration=\"800\">\n" +
+                        "<img src="+product.image+" alt="+product.product+" class='img-responsive'>"+
+                    //"                    <img src="+ product.image+ "alt=" +"class=\"img-responsive\">\n" +
+                    "                    <div class=\"overlay\">\n" +
+                    "                    <h5>——"+ product.product +"——</h5>\n" +
+                    "                <ul class=\"date\" id=\"cotton\">";
+                var period = product.period;
+                var length=period.length;
+                for(var i=0;i<length;i++){
+                    var item = product.product+"-"+period[i];
+                    var li = "<li class=\"col-sm-6 col-md-4\">";
+                    li+="<a class=\"button\" href=\"item.html?item="+item+"\">"+period[i]+"</a></li>";
+                    html+=li;
+                }
+                html+= "                    </ul>\n" +
+                    "                    </div>\n" +
+                    "                    </figure>\n" +
+                    "                    </li>"
+                arr.push(html);
+            });
+            $("#product").html(arr);
+        }
+    });
+    */
+    var data={
+        "product":[
+            {
+                "product":"cotton",
+                "image":"images/cotton.jpg",
+                "period":["SE1","SE2"]
+            }
+        ]
+    };
+    var arr=[];
+    $.each(data.product,function(index,product){
+        var html="<li class=\"col-sm-6 col-md-4\">\n" +
+            "                    <figure data-aos=\"fade-up\" data-aos-duration=\"800\">\n" +
+            "<img src="+product.image+" alt="+product.product+" class='img-responsive'>"+
+            //"                    <img src="+ product[image]+ "alt=" +"class=\"img-responsive\">\n" +
+            "                    <div class=\"overlay\">\n" +
+            "                    <h5>——"+ product.product +"——</h5>\n" +
+            "                <ul class=\"date\" id=\"cotton\">";
+        var period = product.period;
+        var length=period.length;
+        for(var i=0;i<length;i++){
+            var item = product.product+"-"+period[i];
+            var li = "<li class=\"col-sm-6 col-md-4\">";
+            li+="<a class=\"button\" href=\"item.html?item="+item+"\">"+period[i]+"</a></li>";
+            html+=li;
+        }
+        html+= "                    </ul>\n" +
+            "                    </div>\n" +
+            "                    </figure>\n" +
+            "                    </li>"
+        arr.push(html);
+    });
+    $("#product").html(arr);
+    /*
+    var cotton = ["SE1","SE2","SE3","SE4"];
+    var tea = ["SE11","SE21","SE31","SE41"];
+    var pta = ["SE12","SE22","SE32","SE42"];
+    var length1 = cotton.length;
+    var a1=[];
+    for(var i=0;i<length1;i++){
+        var item = "cotton-"+cotton[i];
+        var li = "<li class=\"col-sm-6 col-md-4\">";
+       li+="<a class=\"button\" href=\"item.html?item="+item+"\">"+cotton[i]+"</a></li>";
+       a1.push(li);
+    }
+    $("#cotton").html(a1);
+    var length2 = tea.length;
+    var a2=[];
+    for(i=0;i<length2;i++){
+        item = "tea-"+tea[i];
+        li = "<li class=\"col-sm-6 col-md-4\">";
+        li+="<a class=\"button\" href=\"item.html?item="+item+"\">"+tea[i]+"</a></li>";
+        a2.push(li);
+    }
+    $("#tea").html(a2);
+    var length3 = pta.length;
+    var a3=[];
+    for(i=0;i<length3;i++){
+        item = "pta-"+pta[i];
+        li = "<li class=\"col-sm-6 col-md-4\">";
+        li+="<a class=\"button\" href=\"item.html?item="+item+"\">"+pta[i]+"</a></li>";
+        a3.push(li);
+    }
+    $("#pta").html(a3);
+    */
+</script>
+</html>

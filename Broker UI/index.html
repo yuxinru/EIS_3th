@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Broker</title>
+
+    <!-- === CSS === -->
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/style3.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+    <link rel="stylesheet" href="bootstrap-4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/ionicons.css">
+    <link rel="stylesheet" href="css/now-ui-kit.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+<div>
+    <section id="main_page">
+        <!--=== navbar ===-->
+        <header class="header">
+            <nav class="navbar navbar-expand-sm">
+                <div class="container">
+                    <span class="navbar-brand" href="index.html">Broker</span>
+                    <div class="collapse navbar-collapse" id="example-navbar" data-nav-image="assets/img/blurred-image-1.jpg">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pend.html">Pending</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="transaction.html">Transaction</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!--=== home ===-->
+        <section id="home" class="header-intro-1 d-flex align-items-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="header-intro-wrap text-center">
+                            <div><img src="images/broker.jpg"  style="border-radius:50%;margin-bottom: 50px;"></div>
+                            <div class="header-intro-title"><h1>Welcome to the best Broker</h1></div>
+                            <!--<div><a href="#" class="btn btn-primary main-btn bg-main">Get Started</a></div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--=== blog page ===-->
+        <section class="blog-posts">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="section-header">
+                                    <div class="sec-icon"><i class="ion ion-android-list"></i></div>
+                                    <div class="sec-title">Products</div>
+                                </div>
+                            </div>
+                            <div id="product">
+                            </div>
+                            <!--
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="blog-post">
+                                    <div class="post-img">
+                                        <img class="img-fluid" src="images/cotton.jpg" alt="cotton">
+                                    </div>
+                                    <div class="blog-details">
+                                        <ul class="list-inline blog-item-links">
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-person"></i>Admin</a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-calendar"></i>May 18, 2018</a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-chatbubbles"></i>Comments 113</a></li>
+                                        </ul>
+                                        <h4 class="media-heading"><span style="color:darkred;font-weight:bold"></span>Cotton</h4>
+                                        <h4>Period:</h4>
+                                        <ul class="list-inline blog-item-links" id="cotton">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="blog-post">
+                                    <div class="post-img">
+                                        <img class="img-fluid" src="images/tea.jpg" alt="tea">
+                                    </div>
+                                    <div class="blog-details">
+                                        <ul class="list-inline blog-item-links">
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-person"></i>Admin</a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-calendar"></i>May 18, 2018</a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-chatbubbles"></i>Comments 113</a></li>
+                                        </ul>
+                                        <h4 class="media-heading"><span style="color:darkred;font-weight:bold"></span>Tea</h4>
+                                        <h4>Period:</h4>
+                                        <ul class="list-inline blog-item-links" id="tea">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="blog-post">
+                                    <div class="post-img">
+                                        <img class="img-fluid" src="images/PTA.jpg" alt="PTA">
+                                    </div>
+                                    <div class="blog-details">
+                                        <ul class="list-inline blog-item-links">
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-person"></i>Admin</a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-calendar"></i>May 18, 2018</a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-chatbubbles"></i>Comments 113</a></li>
+                                        </ul>
+                                        <h4 class="media-heading"><span style="color:darkred;font-weight:bold"></span>PTA</h4>
+                                        <h4>Period:</h4>
+                                        <ul class="list-inline blog-item-links" id="pta">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="blog-post">
+                                    <div class="post-img">
+                                        <img class="img-fluid" src="images/Fe.jpg" alt="Fe">
+                                    </div>
+                                    <div class="blog-details">
+                                        <ul class="list-inline blog-item-links">
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-person"></i>Admin</a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-calendar"></i>May 18, 2018</a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-chatbubbles"></i>Comments 113</a></li>
+                                        </ul>
+                                        <h4 class="media-heading"><span style="color:darkred;font-weight:bold"></span>Fe</h4>
+                                        <h4>Period:</h4>
+                                        <ul class="list-inline blog-item-links" id="fe">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="blog-post">
+                                    <div class="post-img">
+                                        <img class="img-fluid" src="images/Cu.jpg" alt="Cu">
+                                    </div>
+                                    <div class="blog-details">
+                                        <ul class="list-inline blog-item-links">
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-person"></i>Admin</a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-calendar"></i>May 18, 2018</a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-chatbubbles"></i>Comments 113</a></li>
+                                        </ul>
+                                        <h4 class="media-heading"><span style="color:darkred;font-weight:bold"></span>Cu</h4>
+                                        <h4>Period:</h4>
+                                        <ul class="list-inline blog-item-links" id="cu">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="blog-post">
+                                    <div class="post-img">
+                                        <img class="img-fluid" src="images/jade.jpg" alt="jade">
+                                    </div>
+                                    <div class="blog-details">
+                                        <ul class="list-inline blog-item-links">
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-person"></i>Admin</a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-calendar"></i>May 18, 2018</a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-chatbubbles"></i>Comments 113</a></li>
+                                        </ul>
+                                        <h4 class="media-heading"><span style="color:darkred;font-weight:bold"></span>Jade</h4>
+                                        <h4>Period:</h4>
+                                        <ul class="list-inline blog-item-links" id="jade">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="blog-post">
+                                    <div class="post-img">
+                                        <img class="img-fluid" src="images/oil.jpg" alt="oil">
+                                    </div>
+                                    <div class="blog-details">
+                                        <ul class="list-inline blog-item-links">
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-person"></i>Admin</a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-calendar"></i>May 18, 2018</a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="ion ion-chatbubbles"></i>Comments 113</a></li>
+                                        </ul>
+                                        <h4 class="media-heading"><span style="color:darkred;font-weight:bold"></span>Oil</h4>
+                                        <h4>Period:</h4>
+                                        <ul class="list-inline blog-item-links" id="oil">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=== footer ===-->
+        <section class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer-wrap text-center">
+                            <ul class="list-inline social-icon">
+                                <li class="list-inline-item"><i class="ion ion-social-twitter"></i></li>
+                                <li class="list-inline-item"><i class="ion ion-social-linkedin"></i></li>
+                                <li class="list-inline-item"><i class="ion ion-social-dribbble-outline"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section id="login_register">
+        <div id="container_demo" >
+            <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+            <a class="hiddenanchor" id="toregister"></a>
+            <a class="hiddenanchor" id="tologin"></a>
+            <div id="wrapper">
+                <div id="login" class="animate form">
+                    <form id="form_login" autocomplete="on" method="post">
+                        <h1>Log in</h1>
+                        <p>
+                            <label for="username" class="uname" data-icon="u" > Your username </label>
+                            <input id="username" name="username" required type="text" placeholder="myusername"/>
+                        </p>
+                        <p>
+                            <label for="password" class="youpasswd" data-icon="p"> Your password </label>
+                            <input id="password" name="password" required type="password" placeholder="eg. X8df!90EO" />
+                        </p>
+                        <p class="login button">
+                            <input type="submit" value="Login" onclick="login()"/>
+                        </p>
+                        <p class="change_link">
+                            Not a member yet ?
+                            <a href="#toregister" class="to_register">Join us</a>
+                        </p>
+                    </form>
+                </div>
+
+                <div id="register" class="animate form">
+                    <form id="form_register" autocomplete="on">
+                        <h1> Sign up </h1>
+                        <p>
+                            <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+                            <input id="usernamesignup" name="usernamesignup" required type="text" placeholder="mysuperusername690" />
+                        </p>
+                        <p>
+                            <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
+                            <input id="emailsignup" name="emailsignup" required type="email" placeholder="mysupermail@mail.com"/>
+                        </p>
+                        <p>
+                            <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+                            <input id="passwordsignup" name="passwordsignup" required type="password" placeholder="eg. X8df!90EO"/>
+                        </p>
+                        <p>
+                            <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+                            <input id="passwordsignup_confirm" name="passwordsignup_confirm" required type="password" placeholder="eg. X8df!90EO"/>
+                        </p>
+                        <p class="signin button">
+                            <input type="submit" value="Sign up" onclick="register()"/>
+                        </p>
+                        <p class="change_link">
+                            Already a member ?
+                            <a href="#tologin" class="to_register"> Go and log in </a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+    <!-- ==== js ==== -->
+<script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="bootstrap-4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+<script>
+    console.log(sessionStorage.getItem("username"));
+    if(sessionStorage.getItem("username")===null){
+        $("#login_register").css({
+            "position":"fixed", "left":"30%" ,"top":"5%"
+        });
+        $("#main_page").css({
+            "z-index":"-1","opacity":"0.3","pointer-events":"none"
+        })
+    }
+    else{
+        $("#login_register").css({
+            "display": "none"
+        });
+        $("#main_page").css({
+            "pointer-events": "auto", "opacity": "1"
+        });
+    }
+    function login(){
+        /*
+        $.ajax({
+            type:"GET",
+            url:"http://localhost:8080",
+            data:$("#form_login").serialize(),
+            success:function(){
+               if(document.getElementsByName("username")[0].value!==null &&document.getElementsByName("password")[0].value!==null ) {
+                   sessionStorage.setItem("username", document.getElementsByName("username")[0].value);
+        }
+            }
+        })
+        */
+    }
+    function register(){
+        $.ajax({
+            type:"GET",
+            url:"http://localhost:8080",
+            data:$("#form_register").serialize(),
+            success:function(){
+                alert("register done!");
+            }
+        })
+    }
+    /*
+    $.ajax({
+        type:"GET",
+        url:"http://localhost:8080",
+        dataType:"json",
+        success:function(data){
+            var arr=[];
+            $.each(data.product,function(index,product){
+                var html=" <div class=\"col-lg-4 col-md-6 col-sm-6\">\n" +
+                    "                    <div class=\"blog-post\">\n" +
+                    "                    <div class=\"post-img\">\n" +
+                    "                    <img class=\"img-fluid\" src="+product.image+ "alt=" +product.product+">"+
+                    "                    </div>\n" +
+                    "                    <div class=\"blog-details\">\n" +
+                    "                    <ul class=\"list-inline blog-item-links\">\n" +
+                    "                    <li class=\"list-inline-item\"><a href=\"#\"><i class=\"ion ion-person\"></i>Admin</a></li>\n" +
+                    "                <li class=\"list-inline-item\"><a href=\"#\"><i class=\"ion ion-calendar\"></i>May 18, 2018</a></li>\n" +
+                    "                <li class=\"list-inline-item\"><a href=\"#\"><i class=\"ion ion-chatbubbles\"></i>Comments 113</a></li>\n" +
+                    "                </ul>\n" +
+                    "                <h4 class=\"media-heading\"><span style=\"color:darkred;font-weight:bold\"></span>"+product.product+"</h4>\n" +
+                    "                <h4>Period:</h4>\n" +
+                    "                <ul class=\"list-inline blog-item-links\" id=\"cotton\">\n";
+                var period = product.period;
+                var length = period.length;
+                for(var i=0;i<length;i++){
+                    var item =product.product+"-"+period[i];
+                    html+= "<li class=\"date\">";
+                    html+="<a class=\"button\" href=\"item.html?item="+item+"\">"+period[i]+"</a></li>";
+                }
+                html+= "</ul>\n" +
+                    "  </div>\n" +
+                    "  </div>\n" +
+                    " </div>";
+                    arr.push(html);
+            });
+            $("#product").html(arr);
+        }
+    });
+    */
+    var data={
+        "product":[
+            {
+                "product":"cotton",
+                "image":"images/cotton.jpg",
+                "period":["SE1","SE2"]
+            }
+        ]
+    };
+    var arr=[];
+    $.each(data.product,function(index,product){
+        var html=" <div class=\"col-lg-4 col-md-6 col-sm-6\">\n" +
+            "                    <div class=\"blog-post\">\n" +
+            "                    <div class=\"post-img\">\n" +
+            "                    <img class=\"img-fluid\" src="+product.image+ " alt=" +product.product+">"+
+            "                    </div>\n" +
+            "                    <div class=\"blog-details\">\n" +
+            "                <h4 class=\"media-heading\"><span style=\"color:darkred;font-weight:bold;text-align:center\"></span>"+product.product+"</h4>\n" +
+            "                <h4>Period:</h4>\n" +
+            "                <ul class=\"list-inline blog-item-links\" id=\"cotton\">\n";
+        var period = product.period;
+        var length = period.length;
+        for(var i=0;i<length;i++){
+            var item =product.product+"-"+period[i];
+            html+= "<li class=\"date\">";
+            html+="<a class=\"button\" href=\"item.html?item="+item+"\">"+period[i]+"</a></li>";
+        }
+        html+= "</ul>\n" +
+            "  </div>\n" +
+            "  </div>\n" +
+            " </div>";
+        arr.push(html);
+    });
+    $("#product").html(arr);
+</script>
+</body>
+</html>
