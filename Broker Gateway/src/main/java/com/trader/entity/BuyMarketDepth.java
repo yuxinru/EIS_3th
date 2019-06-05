@@ -1,7 +1,7 @@
 package com.trader.entity;
 
 
-import com.broker.entity.Order;
+import com.broker.parameter.Order;
 
 import java.util.LinkedList;
 import java.util.TreeMap;

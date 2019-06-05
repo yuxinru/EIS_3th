@@ -3,6 +3,7 @@ package com.broker.serviceImpl;
 import com.broker.dao.OrderblotterDAO;
 import com.broker.entity.*;
 import com.broker.handler.OrderHandler;
+import com.broker.parameter.Order;
 import com.broker.service.OrderService;
 import com.broker.handler.ActiveMQHandler;
 import lombok.extern.slf4j.Slf4j;
@@ -35,32 +36,32 @@ public class OrderServiceImpl implements OrderService {
     @Scheduled(fixedRate=5000)
     @Async
     public void sendOrderBlotter(){
-        List<Object> objects = orderHandler.getOrderBlotter();
-        LinkedList<Orderblotter> orderblotters = new LinkedList<>();
-        ListIterator<Object> listIterator=objects.listIterator();
-
-        Object o;
-        while(listIterator.hasNext()){
-            o = listIterator.next();
-            orderblotters.add((Orderblotter)o);
-        }
-        log.info("定时发送orderblotters: " );
-        activeMQHandler.send("OrderBlotter", orderblotters);
+//        List<Object> objects = orderHandler.getOrderBlotter();
+//        LinkedList<Orderblotter> orderblotters = new LinkedList<>();
+//        ListIterator<Object> listIterator=objects.listIterator();
+//
+//        Object o;
+//        while(listIterator.hasNext()){
+//            o = listIterator.next();
+//            orderblotters.add((Orderblotter)o);
+//        }
+//        log.info("定时发送orderblotters: " );
+//        activeMQHandler.send("OrderBlotter", orderblotters);
 
     }
     @Async
     @Scheduled(fixedDelay = 5000)
     public void sendSellMarketDepth(){
-        SellMarketDepth sellMarketDepth = orderHandler.getSellMarketDepth();
-        log.info("定时发送sellMarketDepth: " );
-        activeMQHandler.send("SellMarketDepth", sellMarketDepth);
+//        SellMarketDepth sellMarketDepth = orderHandler.getSellMarketDepth();
+//        log.info("定时发送sellMarketDepth: " );
+//        activeMQHandler.send("SellMarketDepth", sellMarketDepth);
     }
     @Async
     @Scheduled(fixedDelay = 5000)
     public void sendBuyMarketDepth(){
-        BuyMarketDepth buyMarketDepth = orderHandler.getBuyMarketDepth();
-        log.info("定时发送buyMarketDepth: " );
-        activeMQHandler.send("SellMarketDepth", buyMarketDepth);
+//        BuyMarketDepth buyMarketDepth = orderHandler.getBuyMarketDepth();
+//        log.info("定时发送buyMarketDepth: " );
+//        activeMQHandler.send("SellMarketDepth", buyMarketDepth);
     }
 
     private boolean makeBlotter(Order IniOrder, Order CplOrder, int quantity){

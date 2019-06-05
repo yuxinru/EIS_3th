@@ -1,6 +1,6 @@
 package com.broker.serviceImpl;
 
-import com.broker.entity.Order;
+import com.broker.parameter.Order;
 import com.broker.handler.RedisHandler;
 import org.junit.After;
 import org.junit.Before;

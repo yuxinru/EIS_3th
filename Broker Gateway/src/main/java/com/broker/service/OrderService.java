@@ -1,11 +1,9 @@
 package com.broker.service;
 
 import com.broker.entity.BuyMarketDepth;
-import com.broker.entity.Order;
-import com.broker.entity.Orderblotter;
+import com.broker.parameter.Order;
 
 import javax.jms.JMSException;
-import java.util.LinkedList;
 import java.util.List;
 
 public interface OrderService {

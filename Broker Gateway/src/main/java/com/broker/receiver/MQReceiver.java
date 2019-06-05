@@ -2,7 +2,7 @@ package com.broker.receiver;
 
 import com.alibaba.fastjson.JSONObject;
 import com.broker.service.OrderService;
-import com.broker.entity.Order;
+import com.broker.parameter.Order;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.annotation.JmsListener;
@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import javax.jms.JMSException;
-import java.util.Map;
 
 @EnableJms
 @Slf4j

@@ -26,9 +26,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Integer marketOrder(Order order) {
 
-
         activeMQHandler.send("order", order);
-
 
 //        Destination destination1 = new ActiveMQQueue("queue01");
 //

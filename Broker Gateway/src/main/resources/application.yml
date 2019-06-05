@@ -24,6 +24,10 @@ spring:
         max-idle: 8
         min-idle: 2
         max-wait: 100
+  session:
+    store-type: redis
+    timeout: 2000
+
   datasource:
     url: jdbc:mysql://localhost:3306/broker?useSSL=false&serverTimezone=GMT
     username: root
@@ -41,6 +45,9 @@ logging:
 mybatis:
   typeAliasesPackage: com.broker.entity
   mapperLocations: classpath:mapper/*.xml
+
+
+
 #spring:
 #  kafka:
 #    bootstrap-servers: 127.0.0.1:9092
