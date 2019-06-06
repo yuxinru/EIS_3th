@@ -35,32 +35,32 @@ public class OrderServiceImpl implements OrderService {
     @Scheduled(fixedRate=5000)
     @Async
     public void sendOrderBlotter(){
-        List<Object> objects = orderHandler.getOrderBlotter();
-        LinkedList<Orderblotter> orderblotters = new LinkedList<>();
-        ListIterator<Object> listIterator=objects.listIterator();
-
-        Object o;
-        while(listIterator.hasNext()){
-            o = listIterator.next();
-            orderblotters.add((Orderblotter)o);
-        }
-        log.info("定时发送orderblotters: " );
-        activeMQHandler.send("OrderBlotter", orderblotters);
+//        List<Object> objects = orderHandler.getOrderBlotter();
+//        LinkedList<Orderblotter> orderblotters = new LinkedList<>();
+//        ListIterator<Object> listIterator=objects.listIterator();
+//
+//        Object o;
+//        while(listIterator.hasNext()){
+//            o = listIterator.next();
+//            orderblotters.add((Orderblotter)o);
+//        }
+//        log.info("定时发送orderblotters: " );
+//        activeMQHandler.send("OrderBlotter", orderblotters);
 
     }
     @Async
     @Scheduled(fixedDelay = 5000)
     public void sendSellMarketDepth(){
-        SellMarketDepth sellMarketDepth = orderHandler.getSellMarketDepth();
-        log.info("定时发送sellMarketDepth: " );
-        activeMQHandler.send("SellMarketDepth", sellMarketDepth);
+//        SellMarketDepth sellMarketDepth = orderHandler.getSellMarketDepth();
+//        log.info("定时发送sellMarketDepth: " );
+//        activeMQHandler.send("SellMarketDepth", sellMarketDepth);
     }
     @Async
     @Scheduled(fixedDelay = 5000)
     public void sendBuyMarketDepth(){
-        BuyMarketDepth buyMarketDepth = orderHandler.getBuyMarketDepth();
+//        BuyMarketDepth buyMarketDepth = orderHandler.getBuyMarketDepth();
         log.info("定时发送buyMarketDepth: " );
-        activeMQHandler.send("SellMarketDepth", buyMarketDepth);
+//        activeMQHandler.send("SellMarketDepth", buyMarketDepth);
     }
 
     private boolean makeBlotter(Order IniOrder, Order CplOrder, int quantity){
@@ -78,6 +78,7 @@ public class OrderServiceImpl implements OrderService {
         orderHandler.setOrderBlotter(orderblotter);
         return true;
     }
+
     private boolean buy(Order order){
         int quantity = order.getQuantity();
         SellMarketDepth sellMarketDepth = orderHandler.getSellMarketDepth();
@@ -106,14 +107,12 @@ public class OrderServiceImpl implements OrderService {
                 makeBlotter(order1, order, order1.getQuantity());
             }
             sellMarketDepth.map.remove(curKey);
-            orderHandler.setSellMarketDepth(sellMarketDepth);
         }
-
         sellMarketDepth.map.put(curKey, orderList);
-
         orderHandler.setSellMarketDepth(sellMarketDepth);
         return true;
     }
+
     private boolean sell(Order order){
         int quantity = order.getQuantity();
         BuyMarketDepth buyMarketDepth = orderHandler.getBuyMarketDepth();
@@ -142,14 +141,12 @@ public class OrderServiceImpl implements OrderService {
                 makeBlotter(order1, order, order1.getQuantity());
             }
             buyMarketDepth.map.remove(curKey);
-
         }
-
         buyMarketDepth.map.put(curKey, orderList);
-
         orderHandler.setBuyMarketDepth(buyMarketDepth);
         return true;
     }
+
     private void checkBuyStopOrder(){
         BuyStopOrder buyStopOrder = orderHandler.getBuyStopOrder();
         if(buyStopOrder.stopOrderMap.size() == 0)
@@ -221,6 +218,10 @@ public class OrderServiceImpl implements OrderService {
         }
         orderHandler.setSellStopOrder(sellStopOrder);
     }
+
+
+
+
     @Override
     public Integer buyMarketOrder(Order order) {
         order.setOrderId(orderHandler.getBuyOrderId());
@@ -391,7 +392,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<BuyMarketDepth> getBuyMarketDepth(){
+    public List<BuyMarketDepth> getMarketDepth(){
         return null;
     }
 

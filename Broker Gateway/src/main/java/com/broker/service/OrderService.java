@@ -9,6 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public interface OrderService {
+    // 如果订单数量足够，则正常购买，返回0
+    // 如果订单数量不足，则不购买，返回-1
     Integer buyMarketOrder(Order order) throws JMSException;
 
     Integer buyLimitOrder(Order order);
@@ -25,7 +27,7 @@ public interface OrderService {
 
     Integer sellCancelOrder(Order order);
 
-    List<BuyMarketDepth> getBuyMarketDepth();
+    List<BuyMarketDepth> getMarketDepth();
 
     void sendOrderBlotter();
 
