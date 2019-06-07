@@ -3,11 +3,13 @@ package com.broker.serviceImpl;
 import com.broker.dao.UserDAO;
 import com.broker.entity.User;
 import com.broker.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 @Service
+@Slf4j
 public class UserServiceImpl implements UserService {
     @Resource
     UserDAO userDAO;
@@ -36,7 +38,7 @@ public class UserServiceImpl implements UserService {
         User user1 = new User();
         user1.setUsername(user.getUsername());
         //user.setPassword(encode);
-        user1.setRole(user.getPassword());
+        user1.setPassword(user.getPassword());
         user1.setRole("ROLE_USER");
         return userDAO.insert(user1);
     }

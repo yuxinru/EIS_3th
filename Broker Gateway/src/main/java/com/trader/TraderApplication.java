@@ -12,8 +12,5 @@ public class TraderApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(TraderApplication.class, args);
-
     }
-
-
 }

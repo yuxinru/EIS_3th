@@ -5,6 +5,11 @@ import com.trader.entity.Order;
 import com.trader.entity.OrderBlotter;
 import com.trader.parameter.Resp;
 import com.trader.service.OrderService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,16 +22,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/order")
+@Slf4j
 public class OrderController {
     @Resource
     private OrderService orderService;
+
 
     @RequestMapping(value="/test", method= RequestMethod.GET)
     public Resp test(HttpServletRequest request, Model model) throws JMSException {
         System.out.println("enter marketOrder");
 
 
-        int i = orderService.marketOrder(null);
+        int i = orderService.sendOrder(null);
 
         if (i == 1) {
             return new Resp("success", "下单成功!");
@@ -34,9 +41,8 @@ public class OrderController {
         return new Resp("error", "下单失败!");
     }
 
-    @RequestMapping(value="/market", method= RequestMethod.POST)
-    public Resp marketOrder(HttpServletRequest request, Model model) throws JMSException {
-        System.out.println("enter marketOrder");
+    @RequestMapping(value="/send", method= RequestMethod.POST)
+    public Resp sendOrder(HttpServletRequest request, Model model) throws JMSException {
 
         Order order = new Order();
         order.setOrderId(Integer.parseInt(request.getParameter("orderId")));
@@ -44,37 +50,11 @@ public class OrderController {
         order.setProductId(Integer.parseInt(request.getParameter("productId")));
         order.setQuantity(Integer.parseInt(request.getParameter("quantity")));
         order.setBroker(request.getParameter("broker"));
-        int i = orderService.marketOrder(order);
+        order.setSide(request.getParameter("side"));
+        order.setBroker("broker");
 
-        if (i == 1) {
-            return new Resp("success", "下单成功!");
-        }
-        return new Resp("error", "下单失败!");
-    }
-    @RequestMapping(value="/limit", method= RequestMethod.POST)
-    public Resp limitOrder(HttpServletRequest request, Model model){
-        System.out.println("enter limitOrder");
-        int i = orderService.limitOrder();
-
-        if (i == 1) {
-            return new Resp("success", "下单成功!");
-        }
-        return new Resp("error", "下单失败!");
-    }
-    @RequestMapping(value="/stop", method= RequestMethod.POST)
-    public Resp stopOrder(HttpServletRequest request, Model model){
-        System.out.println("enter stopOrder");
-        int i = orderService.stopOrder();
-
-        if (i == 1) {
-            return new Resp("success", "下单成功!");
-        }
-        return new Resp("error", "下单失败!");
-    }
-    @RequestMapping(value="/cancel", method= RequestMethod.POST)
-    public Resp cancelOrder(HttpServletRequest request, Model model){
-        System.out.println("enter cancelOrder");
-        int i = orderService.cancelOrder();
+        log.info(order.toString());
+        int i = orderService.sendOrder(order);
 
         if (i == 1) {
             return new Resp("success", "下单成功!");

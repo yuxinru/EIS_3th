@@ -56,7 +56,7 @@ public class UserControllerTest {
 
     @Test
     public void register() throws Exception {
-        String json="{\"username\":\"admin\",\"password\":\"admin\"}";
+        String json="{\"username\":\"admin1\",\"password\":\"admin\"}";
         mvc.perform(MockMvcRequestBuilders.post("/user/register")
                         .contentType(MediaType.APPLICATION_JSON_UTF8)
                         .accept(MediaType.APPLICATION_JSON_UTF8)

@@ -1,6 +1,7 @@
 package com.broker.service;
 
 import com.broker.entity.BuyMarketDepth;
+import com.broker.entity.Orderblotter;
 import com.broker.parameter.Order;
 
 import javax.jms.JMSException;
@@ -23,12 +24,11 @@ public interface OrderService {
 
     Integer sellCancelOrder(Order order);
 
-    List<BuyMarketDepth> getBuyMarketDepth();
+    List<Orderblotter> getOrderBlotter(Order order);
 
-    void sendOrderBlotter();
+    void sendOrderBlotters();
 
-    void sendSellMarketDepth();
+    void sendMarketDepths();
 
-    void sendBuyMarketDepth();
 
 }

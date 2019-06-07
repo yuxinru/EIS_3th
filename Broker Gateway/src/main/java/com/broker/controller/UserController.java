@@ -4,6 +4,7 @@ import com.broker.entity.User;
 import com.broker.parameter.Resp;
 import com.broker.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,7 +15,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @RestController
-@CrossOrigin
 @RequestMapping("/user")
 @Slf4j
 public class UserController {
@@ -22,7 +22,6 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/login_p")
-    @ResponseBody
     public void login_p(HttpServletResponse resp) throws IOException {
         resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         resp.setContentType("application/json;charset=UTF-8");
@@ -34,9 +33,15 @@ public class UserController {
     }
 
     //登陆
-    @RequestMapping("/login")
+    @RequestMapping(value="/login", method= RequestMethod.POST )
     @ResponseBody
     public Resp login(@RequestBody User user, HttpServletRequest request) {
+//        String username = request.getParameter("username");
+//        String password = request.getParameter("password");
+//        log.info(username);
+//        User user = new User();
+//        user.setUsername(username);
+//        user.setPassword(password);
         log.info(user.toString());
         int i = userService.login(user);
         if (i == 1) {
@@ -50,7 +55,6 @@ public class UserController {
     }
     //用户注册
     @RequestMapping(value="/register",method= RequestMethod.POST)
-    @ResponseBody
     public Resp register(@RequestBody User user){
 
         int i = userService.registerUser(user);

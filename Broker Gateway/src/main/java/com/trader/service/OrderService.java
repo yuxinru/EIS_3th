@@ -8,13 +8,7 @@ import javax.jms.JMSException;
 import java.util.List;
 
 public interface OrderService {
-    Integer marketOrder(Order order) throws JMSException;
-
-    Integer limitOrder();
-
-    Integer stopOrder();
-
-    Integer cancelOrder();
+    Integer sendOrder(Order order) throws JMSException;
 
     List<BuyMarketDepth> getBuyMarketDepth();
 

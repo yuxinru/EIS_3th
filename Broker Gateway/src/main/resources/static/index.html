@@ -303,23 +303,27 @@
         });
     }
     function login(){
-        /*
+        console.log($("#form_login").serialize());
         $.ajax({
             type:"GET",
-            url:"http://localhost:8080",
+            dataType: "json",
+            url:"http://localhost:8082/user/login",
             data:$("#form_login").serialize(),
-            success:function(){
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+                success:function(){
                if(document.getElementsByName("username")[0].value!==null &&document.getElementsByName("password")[0].value!==null ) {
                    sessionStorage.setItem("username", document.getElementsByName("username")[0].value);
         }
             }
         })
-        */
     }
     function register(){
         $.ajax({
-            type:"GET",
-            url:"http://localhost:8080",
+            type:"POST",
+            url:"http://localhost:8082/user/register",
             data:$("#form_register").serialize(),
             success:function(){
                 alert("register done!");

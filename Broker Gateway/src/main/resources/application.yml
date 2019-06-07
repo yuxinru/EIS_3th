@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8081
 spring:
  # messages:
   #  basename: i18n/Messages,i18n/Pages

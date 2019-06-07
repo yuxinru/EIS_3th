@@ -2,6 +2,7 @@ package com.broker.handler;
 
 import com.alibaba.fastjson.JSONObject;
 import com.broker.entity.BuyMarketDepth;
+import com.broker.entity.MarketDepth;
 import com.broker.entity.Orderblotter;
 import com.broker.entity.SellMarketDepth;
 import com.trader.entity.Order;
@@ -36,16 +37,11 @@ public class ActiveMQHandler {
         template.convertAndSend(queueName, JSONObject.toJSONString(orderblotter));
         //template.convertAndSend(queueName, data);
     }
-    public void send(String queueName, SellMarketDepth sellMarketDepth) {
-        log.info(">>>>>>>立即发送:" + sellMarketDepth.toString());
+    public void send(String queueName, MarketDepth marketDepth) {
+        log.info(">>>>>>>立即发送:" + marketDepth.toString());
 
-        template.convertAndSend(queueName, JSONObject.toJSONString(sellMarketDepth));
+        template.convertAndSend(queueName, JSONObject.toJSONString(marketDepth));
         //template.convertAndSend(queueName, data);
     }
-    public void send(String queueName, BuyMarketDepth buyMarketDepth) {
-        log.info(">>>>>>>立即发送:" + buyMarketDepth.toString());
 
-        template.convertAndSend(queueName, JSONObject.toJSONString(buyMarketDepth));
-        //template.convertAndSend(queueName, data);
-    }
 }

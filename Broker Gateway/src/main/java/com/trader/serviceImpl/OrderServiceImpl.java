@@ -24,9 +24,11 @@ public class OrderServiceImpl implements OrderService {
     private ActiveMQHandler activeMQHandler;
 
     @Override
-    public Integer marketOrder(Order order) {
+    public Integer sendOrder(Order order) {
+        if(order.getProductId()<1 || order.getProductId()>4 )
+            return -1;
+        activeMQHandler.send("order"+ order.getProductId(), order);
 
-        activeMQHandler.send("order", order);
 
 //        Destination destination1 = new ActiveMQQueue("queue01");
 //
@@ -38,20 +40,7 @@ public class OrderServiceImpl implements OrderService {
         return 1;
     }
 
-    @Override
-    public Integer limitOrder(){
-        return 1;
-    }
 
-    @Override
-    public Integer stopOrder(){
-        return 1;
-    }
-
-    @Override
-    public Integer cancelOrder(){
-        return 1;
-    }
 
     @Override
     public List<BuyMarketDepth> getBuyMarketDepth(){
