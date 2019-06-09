@@ -1,0 +1,153 @@
+package com.trader.controller;
+
+import com.trader.entity.*;
+import com.trader.parameter.Resp;
+import com.trader.service.OrderService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import javax.jms.JMSException;
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+
+@RestController
+@RequestMapping("/order")
+@Slf4j
+public class OrderController {
+    @Resource
+    private OrderService orderService;
+
+//    @RequestMapping(value="/test", method= RequestMethod.GET)
+//    public Resp test(HttpServletRequest request, Model model) throws JMSException {
+//        System.out.println("enter marketOrder");
+//
+//
+//        int i = orderService.sendOrder(null);
+//
+//        if (i == 1) {
+//            return new Resp("success", "下单成功!");
+//        }
+//        return new Resp("error", "下单失败!");
+//    }
+
+    @RequestMapping(value="/send", method= RequestMethod.POST)
+    public Resp sendOrder(@RequestBody Order1 order1) throws JMSException {
+        Order order = new Order();
+        String product = order1.getProduct();
+        String period = order1.getPeriod();
+        log.info("product "+product);
+        log.info("period "+period);
+        if(product.equals("gold")){
+            if(period.equals("SEP16")){
+                order.setProductId(1);
+            }
+            if(period.equals("OCT10")){
+                order.setProductId(2);
+            }
+            if(period.equals("FEB1")){
+                order.setProductId(3);
+            }
+        }
+        else if(product.equals("petro")){
+            if(period.equals("JUL5")){
+                order.setProductId(4);
+            }
+            if(period.equals("JUN12")){
+                order.setProductId(5);
+            }
+            if(period.equals("SEP16")){
+                order.setProductId(6);
+            }
+        }
+        else if(product.equals("steel")){
+            if(period.equals("FEB1")){
+                order.setProductId(7);
+            }
+            if(period.equals("AUG13")){
+                order.setProductId(8);
+            }
+            if(period.equals("APR7")){
+                order.setProductId(9);
+            }
+            if(period.equals("NOV12")){
+                order.setProductId(10);
+            }
+        }
+        else{
+            return new Resp("error", "订单格式有误!");
+        }
+
+        //order.setOrderId(Integer.parseInt(request.getParameter("orderId")));
+
+        order.setType(order1.getType());
+        order.setQuantity(order1.getQuantity());
+        //order.setBroker(request.getParameter("broker"));
+        order.setSide(order1.getSide());
+        order.setBroker("broker");
+        order.setPrice(order1.getPrice());
+
+        log.info(order.toString());
+        //int i = orderService.sendOrder(order);
+        int i = 1;
+        if (i == 1) {
+            return new Resp("success", "下单成功!");
+        }
+        return new Resp("error", "下单失败!");
+    }
+
+    @RequestMapping(value="/marketDepths", method= RequestMethod.GET)
+    public List<MarketDepth> getMarketDepths(HttpServletRequest request, Model model){
+        log.info("getMarketDepths");
+
+        String product = request.getParameter("product");
+        String period = request.getParameter("period");
+        if(product.equals("gold")){
+            if(period.equals("SEP16")){
+                return orderService.getMarketDepths(1);
+            }
+            if(period.equals("OCT10")){
+                return orderService.getMarketDepths(2);
+            }
+            if(period.equals("FEB1")){
+                return orderService.getMarketDepths(3);
+            }
+        }
+        else if(product.equals("petro")){
+            if(period.equals("JUL5")){
+                return orderService.getMarketDepths(4);
+            }
+            if(period.equals("JUN12")){
+                return orderService.getMarketDepths(5);
+            }
+            if(period.equals("SEP16")){
+                return orderService.getMarketDepths(6);
+            }
+        }
+        else if(product.equals("steel")){
+            if(period.equals("FEB1")){
+                return orderService.getMarketDepths(7);
+            }
+            if(period.equals("AUG13")){
+                return orderService.getMarketDepths(8);
+            }
+            if(period.equals("APR7")){
+                return orderService.getMarketDepths(9);
+            }
+            if(period.equals("NOV12")){
+                return orderService.getMarketDepths(10);
+            }
+        }
+
+        return null;
+    }
+
+    @RequestMapping(value="/orderBlotters", method= RequestMethod.GET)
+    public List<OrderBlotter> getOrderBlotters(HttpServletRequest request, Model model){
+        return orderService.getOrderBlotters();
+    }
+}

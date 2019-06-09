@@ -4,5 +4,12 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class OrderBlotters {
-    List<Orderblotter> orderblotters = new LinkedList<>();
+    public List<Orderblotter> orderblotters = new LinkedList<>();
+
+    @Override
+    public String toString() {
+        return "OrderBlotters{" +
+                "orderblotters=" + orderblotters +
+                '}';
+    }
 }

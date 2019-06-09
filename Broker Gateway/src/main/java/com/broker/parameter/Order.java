@@ -6,8 +6,10 @@ import java.util.Date;
 public class Order implements Serializable {
     private Integer orderId;
 
+    //"market" "limit" "cancel" "stop"
     private String type;
 
+    //"buy" "sell"
     private String side;
 
     private Integer productId;

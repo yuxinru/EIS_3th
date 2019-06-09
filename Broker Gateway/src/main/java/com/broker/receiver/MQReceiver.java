@@ -24,6 +24,13 @@ public class MQReceiver {
     private Semaphore semaphore2=new Semaphore(1, true);
     private Semaphore semaphore3=new Semaphore(1, true);
     private Semaphore semaphore4=new Semaphore(1, true);
+    private Semaphore semaphore5=new Semaphore(1, true);
+    private Semaphore semaphore6=new Semaphore(1, true);
+    private Semaphore semaphore7=new Semaphore(1, true);
+    private Semaphore semaphore8=new Semaphore(1, true);
+    private Semaphore semaphore9=new Semaphore(1, true);
+    private Semaphore semaphore10=new Semaphore(1, true);
+
 
     private void dealOrder(Order order) throws JMSException {
         if(order.getSide().equals("buy")){
@@ -89,5 +96,57 @@ public class MQReceiver {
         dealOrder(order);
         semaphore4.release();
     }
+    @JmsListener(destination = "order5")
+    public void listen5(String msg) throws JMSException, InterruptedException{
+        Order order = JSONObject.parseObject(msg, Order.class);
+        log.info(order.toString());
+        semaphore5.acquire();
+        dealOrder(order);
+        semaphore5.release();
+    }
 
+    @JmsListener(destination = "order6")
+    public void listen6(String msg) throws JMSException, InterruptedException{
+        Order order = JSONObject.parseObject(msg, Order.class);
+        log.info(order.toString());
+        semaphore6.acquire();
+        dealOrder(order);
+        semaphore6.release();
+    }
+
+    @JmsListener(destination = "order7")
+    public void listen7(String msg) throws JMSException, InterruptedException{
+        Order order = JSONObject.parseObject(msg, Order.class);
+        log.info(order.toString());
+        semaphore7.acquire();
+        dealOrder(order);
+        semaphore7.release();
+    }
+
+    @JmsListener(destination = "order8")
+    public void listen8(String msg) throws JMSException, InterruptedException{
+        Order order = JSONObject.parseObject(msg, Order.class);
+        log.info(order.toString());
+        semaphore8.acquire();
+        dealOrder(order);
+        semaphore8.release();
+    }
+
+    @JmsListener(destination = "order9")
+    public void listen9(String msg) throws JMSException, InterruptedException{
+        Order order = JSONObject.parseObject(msg, Order.class);
+        log.info(order.toString());
+        semaphore9.acquire();
+        dealOrder(order);
+        semaphore9.release();
+    }
+
+    @JmsListener(destination = "order10")
+    public void listen10(String msg) throws JMSException, InterruptedException{
+        Order order = JSONObject.parseObject(msg, Order.class);
+        log.info(order.toString());
+        semaphore10.acquire();
+        dealOrder(order);
+        semaphore10.release();
+    }
 }

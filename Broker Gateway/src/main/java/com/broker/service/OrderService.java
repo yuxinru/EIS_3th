@@ -1,6 +1,7 @@
 package com.broker.service;
 
 import com.broker.entity.BuyMarketDepth;
+import com.broker.entity.MarketDepth;
 import com.broker.entity.Orderblotter;
 import com.broker.parameter.Order;
 
@@ -24,7 +25,9 @@ public interface OrderService {
 
     Integer sellCancelOrder(Order order);
 
-    List<Orderblotter> getOrderBlotter(Order order);
+    List<Orderblotter> getOrderBlotter();
+
+    List<MarketDepth> getMarketDepth(int productId);
 
     void sendOrderBlotters();
 

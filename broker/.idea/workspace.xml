@@ -1,35 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="demo:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1f23f570-eb4d-4d29-9f36-ae74c13261f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/MarketDepth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/MarketDepth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/handler/TestHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Broker Gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/BrokerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/BrokerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/MarketDepths.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/dist/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Trader Gateway/src/main/java/com/trader/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Trader Gateway/src/main/java/com/trader/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Trader Gateway/src/main/java/com/trader/entity/MarketDepths.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Trader Gateway/src/main/java/com/trader/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Trader Gateway/src/main/java/com/trader/handler/OrderHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Trader Gateway/src/main/java/com/trader/handler/RedisHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Trader Gateway/src/main/java/com/trader/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Trader Gateway/src/main/java/com/trader/serviceImpl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/demo_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../trader/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../trader/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../trader/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/BuyMarketDepth.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/BuyMarketDepth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/BuyStopOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/BuyStopOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/SellMarketDepth.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/SellMarketDepth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/SellStopOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/SellStopOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/MarketDepth.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/MarketDepth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/OrderBlotters.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/OrderBlotters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/ActiveMQHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/ActiveMQHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/OrderHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/OrderHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/intercepor/WebConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/intercepor/WebConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/parameter/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/parameter/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/receiver/MQReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/receiver/MQReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/serviceImpl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/serviceImpl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/serviceImpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/serviceImpl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/TraderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/TraderApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/receiver/MQReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/receiver/MQReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/serviceImpl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/serviceImpl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/TraderApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/config/WebSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/controller/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/BuyMarketDepth.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/MarketDepth.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/OrderBlotter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/SellMarketDepth.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/handler/ActiveMQHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/handler/TestHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/parameter/Resp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/receiver/KafkaReceiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/receiver/MQReceiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/sender/KafkaSender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/sender/MQSender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/service/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/serviceImpl/OrderServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/ConceptualDataModel_1.cdm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/ConceptualDataModel_1.pdm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/bootstrap-4.0.0-beta/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/bootstrap-4.0.0-beta/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/bootstrap-4.0.0-beta/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/bootstrap-4.0.0-beta/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/bootstrap-4.0.0-beta/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/bootstrap-4.0.0-beta/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/bootstrap-4.0.0-beta/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/bootstrap-4.0.0-beta/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/bootstrap-4.0.0-beta/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/bootstrap-4.0.0-beta/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/bootstrap-4.0.0-beta/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/bootstrap-4.0.0-beta/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/bootstrap-4.0.0-beta/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/bootstrap-4.0.0-beta/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/broker.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/animate-custom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/fonts/BebasNeue-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/fonts/BebasNeue-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/fonts/BebasNeue-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/fonts/BebasNeue-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/fonts/Dharma Type Font License.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/fonts/fontomas-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/fonts/fontomas-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/fonts/fontomas-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/fonts/fontomas-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/fonts/franchise-bold-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/fonts/franchise-bold-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/fonts/franchise-bold-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/fonts/franchise-bold-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/ionicons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/now-ui-kit.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/css/style3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/fonts/ionicons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/fonts/ionicons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/fonts/ionicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/fonts/ionicons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/images/Cu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/images/Fe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/images/PTA.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/images/broker.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/images/cotton.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/images/jade.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/images/oil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/images/product-thumb-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/images/product-thumb-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/images/product-thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/images/shade.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/images/tea.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/images/team_1.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/controller/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/controller/UserControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/item.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/js/jquery-3.2.1.slim.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/pend.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/transaction.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/handler/OrderHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/handler/OrderHandlerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/serviceImpl/OrderServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/serviceImpl/OrderServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/test/java/com/trader/demo/TraderApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Broker Gateway/src/test/java/com/trader/sender/KafkaSenderTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -40,16 +128,54 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../broker\exportToHTML" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/OrderHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="142" column="41" selection-start-line="142" selection-start-column="41" selection-end-line="142" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/MarketDepths.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" column="11" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/serviceImpl/OrderServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="536" column="29" selection-start-line="536" selection-start-column="29" selection-end-line="536" selection-end-column="29" />
+            <state relative-caret-position="344">
+              <caret line="521" column="89" selection-start-line="521" selection-start-column="89" selection-end-line="521" selection-end-column="89" />
               <folding>
                 <element signature="method#buyStopOrder#0;class#OrderServiceImpl#0" />
                 <element signature="method#buyCancelOrder#0;class#OrderServiceImpl#0" />
@@ -60,59 +186,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/resources/application.yml">
+        <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/OrderBlotters.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+            <state relative-caret-position="152">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/OrderHandler.java">
+        <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/intercepor/LoginInterceptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
-              <caret line="134" column="66" selection-start-line="134" selection-start-column="66" selection-end-line="134" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/Orderblotter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/TraderApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-              <folding>
-                <element signature="e#460#461#0" expanded="true" />
-                <element signature="e#528#529#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/controller/OrderController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="69" selection-start-line="69" selection-end-line="72" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/controller/OrderController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="29" />
+            <state relative-caret-position="342">
+              <caret line="18" column="51" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,19 +207,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/service/OrderService.java">
+        <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/intercepor/WebConfigurer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/handler/TestHandler.java">
+        <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/ActiveMQHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-19">
-              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+            <state relative-caret-position="456">
+              <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Broker Gateway/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1254">
+              <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/serviceImpl/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -152,9 +259,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>list</find>
       <find>orderService</find>
       <find>setProductId</find>
+      <find>list</find>
+      <find>Integer</find>
+      <find>Int</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -165,33 +274,39 @@
       <list>
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/User.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/pom.xml" />
-        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/intercepor/WebConfigurer.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/controller/UserControllerTest.java" />
-        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/serviceImpl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/index.html" />
-        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/controller/UserController.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/SellStopOrder.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/BuyStopOrder.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/serviceImpl/OrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/service/OrderService.java" />
-        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/receiver/MQReceiver.java" />
-        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/ActiveMQHandler.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/receiver/MQReceiver.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/BuyMarketDepth.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/SellMarketDepth.java" />
-        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/MarketDepth.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/MarketDepth.java" />
-        <option value="$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/handler/OrderHandlerTest.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/dao/OrderblotterDAO.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/BrokerApplication.java" />
-        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/OrderHandler.java" />
-        <option value="$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/serviceImpl/OrderServiceImplTest.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/TraderApplication.java" />
-        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/handler/TestHandler.java" />
-        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/controller/OrderController.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/handler/OrderHandlerTest.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/receiver/MQReceiver.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/parameter/Order.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/service/OrderService.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/serviceImpl/OrderServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/MarketDepth.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/handler/TestHandler.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/Order.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/Order1.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/controller/OrderController.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/serviceImpl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/intercepor/WebConfigurer.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/controller/OrderController.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/../Trader Gateway/src/main/java/com/trader/handler/OrderHandler.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/MarketDepths.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/OrderBlotters.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/OrderHandler.java" />
+        <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/ActiveMQHandler.java" />
         <option value="$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/serviceImpl/OrderServiceImpl.java" />
       </list>
     </option>
@@ -202,6 +317,22 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="demo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="demo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="85" />
@@ -250,15 +381,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="broker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Broker Gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="broker" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -267,7 +389,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="broker" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -277,7 +398,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="broker" type="462c0819:PsiDirectoryNode" />
               <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -287,57 +407,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="broker" type="462c0819:PsiDirectoryNode" />
-              <item name="receiver" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="broker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Broker Gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="broker" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="broker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Broker Gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="broker" type="462c0819:PsiDirectoryNode" />
-              <item name="serviceImpl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="broker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Broker Gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="trader" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="broker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Broker Gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="trader" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="broker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Broker Gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="trader" type="462c0819:PsiDirectoryNode" />
               <item name="handler" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -346,9 +416,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="trader" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="broker" type="462c0819:PsiDirectoryNode" />
+              <item name="intercepor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="broker" type="b2602c69:ProjectViewProjectNode" />
@@ -356,8 +425,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="trader" type="462c0819:PsiDirectoryNode" />
+              <item name="broker" type="462c0819:PsiDirectoryNode" />
               <item name="serviceImpl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -369,52 +437,18 @@
             </path>
             <path>
               <item name="broker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Broker Gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
             <path>
               <item name="broker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Broker Gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
             </path>
             <path>
               <item name="broker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Broker Gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="broker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Broker Gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="broker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="broker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Broker Gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="broker" type="462c0819:PsiDirectoryNode" />
-              <item name="serviceImpl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="broker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Broker Gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="trader" type="462c0819:PsiDirectoryNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+              <item name="com.intellij.database" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
             </path>
           </expand>
           <select />
@@ -431,14 +465,25 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Broker Gateway" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Broker Gateway/src/main/resources/dist" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.broker.serviceImpl" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -452,7 +497,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TraderApplication">
+  <component name="RunManager" selected="Spring Boot.BrokerApplication">
     <configuration name="OrderServiceImplTest.buyLimitOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
@@ -469,7 +514,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderServiceImplTest.buyMarketOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderServiceImplTest.getMarketDepth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -479,7 +524,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.broker.serviceImpl" />
       <option name="MAIN_CLASS_NAME" value="com.broker.serviceImpl.OrderServiceImplTest" />
-      <option name="METHOD_NAME" value="buyMarketOrder" />
+      <option name="METHOD_NAME" value="getMarketDepth" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -529,11 +574,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.TraderApplication" />
         <item itemvalue="Spring Boot.BrokerApplication" />
+        <item itemvalue="Spring Boot.TraderApplication" />
+        <item itemvalue="JUnit.OrderServiceImplTest.getMarketDepth" />
         <item itemvalue="JUnit.OrderServiceImplTest.sellLimitOrder" />
         <item itemvalue="JUnit.OrderServiceImplTest.buyLimitOrder" />
-        <item itemvalue="JUnit.OrderServiceImplTest.buyMarketOrder" />
       </list>
     </recent_temporary>
   </component>
@@ -554,49 +599,59 @@
       <workItem from="1559802498706" duration="621000" />
       <workItem from="1559876968646" duration="14541000" />
       <workItem from="1559900354885" duration="4845000" />
+      <workItem from="1559920302629" duration="212000" />
+      <workItem from="1559958088999" duration="15074000" />
+      <workItem from="1559980153742" duration="3904000" />
+      <workItem from="1559991786664" duration="2555000" />
+      <workItem from="1559997658490" duration="663000" />
+      <workItem from="1560001510013" duration="2123000" />
+      <workItem from="1560049809469" duration="561000" />
+      <workItem from="1560060342692" duration="3635000" />
+      <workItem from="1560068540585" duration="100000" />
+      <workItem from="1560078633044" duration="888000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="OrderServiceImplTest_buyLimitOrder - 2019.06.07 at 16h 45m 33s.xml">
+    <history-entry file="OrderServiceImplTest_buyLimitOrder - 2019.06.08 at 10h 46m 20s.xml">
       <configuration name="OrderServiceImplTest.buyLimitOrder" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderServiceImplTest_sellMarketOrder - 2019.06.07 at 16h 47m 44s.xml">
-      <configuration name="OrderServiceImplTest.sellMarketOrder" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OrderServiceImplTest_sellLimitOrder - 2019.06.07 at 16h 48m 25s.xml">
-      <configuration name="OrderServiceImplTest.sellLimitOrder" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OrderServiceImplTest_buyMarketOrder - 2019.06.07 at 16h 49m 06s.xml">
-      <configuration name="OrderServiceImplTest.buyMarketOrder" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OrderServiceImplTest_buyMarketOrder - 2019.06.07 at 16h 49m 51s.xml">
-      <configuration name="OrderServiceImplTest.buyMarketOrder" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OrderServiceImplTest_buyMarketOrder - 2019.06.07 at 16h 55m 52s.xml">
-      <configuration name="OrderServiceImplTest.buyMarketOrder" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OrderServiceImplTest_buyMarketOrder - 2019.06.07 at 17h 40m 52s.xml">
-      <configuration name="OrderServiceImplTest.buyMarketOrder" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OrderServiceImplTest_sellLimitOrder - 2019.06.07 at 18h 05m 54s.xml">
-      <configuration name="OrderServiceImplTest.sellLimitOrder" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OrderServiceImplTest_buyLimitOrder - 2019.06.07 at 18h 06m 18s.xml">
+    <history-entry file="OrderServiceImplTest_buyLimitOrder - 2019.06.08 at 10h 53m 42s.xml">
       <configuration name="OrderServiceImplTest.buyLimitOrder" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderServiceImplTest_sellLimitOrder - 2019.06.07 at 18h 07m 00s.xml">
+    <history-entry file="OrderServiceImplTest_buyLimitOrder - 2019.06.08 at 11h 15m 47s.xml">
+      <configuration name="OrderServiceImplTest.buyLimitOrder" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OrderServiceImplTest_buyLimitOrder - 2019.06.08 at 11h 19m 59s.xml">
+      <configuration name="OrderServiceImplTest.buyLimitOrder" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OrderServiceImplTest_buyLimitOrder - 2019.06.08 at 11h 20m 05s.xml">
+      <configuration name="OrderServiceImplTest.buyLimitOrder" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OrderServiceImplTest_buyLimitOrder - 2019.06.08 at 15h 12m 26s.xml">
+      <configuration name="OrderServiceImplTest.buyLimitOrder" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OrderServiceImplTest_sellLimitOrder - 2019.06.08 at 15h 13m 26s.xml">
       <configuration name="OrderServiceImplTest.sellLimitOrder" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OrderServiceImplTest_getMarketDepth - 2019.06.08 at 15h 16m 12s.xml">
+      <configuration name="OrderServiceImplTest.getMarketDepth" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OrderServiceImplTest_getMarketDepth - 2019.06.08 at 15h 18m 43s.xml">
+      <configuration name="OrderServiceImplTest.getMarketDepth" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OrderServiceImplTest_getMarketDepth - 2019.06.08 at 15h 19m 48s.xml">
+      <configuration name="OrderServiceImplTest.getMarketDepth" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39600000" />
+    <option name="totallyTimeSpent" value="69405000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27010724" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18431635" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -606,7 +661,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" x="473" y="638" width="1375" height="456" id="Run" order="2" type="FLOATING" weight="0.60339946" />
+      <window_info anchor="bottom" x="-140" y="193" width="1543" height="602" id="Run" order="2" type="FLOATING" weight="0.60339946" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -615,17 +670,17 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3281471" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.3796034" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.35410765" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.3297587" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Database" order="6" weight="0.3297587" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
@@ -635,86 +690,10 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/config/AuthenticationAccessDeniedHandler.java" />
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/UserHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#322#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Back-End/bookstore/src/main/java/com/bookstore/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="47" column="64" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/intercepor/LoginInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/config/WebSocketConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/resources/static/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="307" column="21" selection-start-line="307" selection-start-column="21" selection-end-line="307" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#h4#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/SellStopOrder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/serviceImpl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -725,52 +704,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/serviceImpl/ProductServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/BuyMarketDepth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/ActiveMQHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="39" column="47" lean-forward="true" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/SellMarketDepth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/receiver/MQReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="54" column="28" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/serviceImpl/ProductServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/BuyMarketDepth.java" />
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/SellMarketDepth.java" />
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/receiver/MQReceiver.java" />
     <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/BuyStopOrder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/BuyMarketDepth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -781,58 +722,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/MarketDepth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" selection-start-line="5" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/MarketDepth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/handler/OrderHandlerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1463">
-          <caret line="98" column="38" selection-start-line="98" selection-start-column="38" selection-end-line="98" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/service/OrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/intercepor/WebConfigurer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="10" selection-start-line="10" selection-end-line="28" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/test/java/com/trader/demo/TraderApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/serviceImpl/ProductServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/service/OrderService.java" />
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/test/java/com/trader/demo/TraderApplicationTests.java" />
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/serviceImpl/ProductServiceImplTest.java" />
     <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/controller/UserControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
@@ -840,37 +732,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/dao/OrderblotterDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/handler/ActiveMQHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/serviceImpl/OrderServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="147" column="29" lean-forward="true" selection-start-line="142" selection-start-column="8" selection-end-line="147" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/receiver/MQReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/dao/OrderblotterDAO.java" />
     <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/BrokerApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -881,21 +743,135 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/TraderApplication.java">
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/垃圾/ExamSystem/.umirc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        <state relative-caret-position="76">
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/handler/OrderHandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="98" column="37" selection-start-line="98" selection-start-column="37" selection-end-line="98" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/RedisHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="379" column="41" selection-start-line="379" selection-start-column="37" selection-end-line="379" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/Orderblotter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/TreeMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="1578" selection-start-line="1578" selection-end-line="1578" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/parameter/Resp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/dao/ProductDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/receiver/MQReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-446">
+          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
           <folding>
-            <element signature="e#460#461#0" expanded="true" />
-            <element signature="e#528#529#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/handler/TestHandler.java">
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/handler/ActiveMQHandler.java" />
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/serviceImpl/OrderServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/parameter/Order.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        <state relative-caret-position="-209">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/BuyMarketDepth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/MarketDepth.java" />
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/MarketDepth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/test/java/com/broker/serviceImpl/OrderServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4465">
+          <caret line="245" column="8" selection-start-line="245" selection-start-column="8" selection-end-line="245" selection-end-column="8" />
+          <folding>
+            <element signature="e#6636#6637#0" expanded="true" />
+            <element signature="e#6686#6687#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/service/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/handler/TestHandler.java" />
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/TraderApplication.java" />
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/Product.java" />
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/Order.java" />
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/entity/Order1.java" />
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/controller/OrderController.java" />
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="63" column="48" selection-start-line="63" selection-start-column="48" selection-end-line="63" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -904,70 +880,103 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/OrderHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="134" column="66" selection-start-line="134" selection-start-column="66" selection-end-line="134" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/Orderblotter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="16" selection-start-line="16" selection-end-line="18" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/serviceImpl/OrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/trader/controller/OrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="69" selection-start-line="69" selection-end-line="72" selection-end-column="5" />
+        <state relative-caret-position="342">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/controller/OrderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="29" />
+        <state relative-caret-position="665">
+          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/service/OrderService.java">
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/intercepor/LoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/intercepor/WebConfigurer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1254">
+          <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/serviceImpl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Trader Gateway/src/main/java/com/trader/handler/OrderHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="52" column="8" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/OrderBlotters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/OrderHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="142" column="41" selection-start-line="142" selection-start-column="41" selection-end-line="142" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/entity/MarketDepths.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="11" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/handler/ActiveMQHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../Broker Gateway/src/main/java/com/broker/serviceImpl/OrderServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="536" column="29" selection-start-line="536" selection-start-column="29" selection-end-line="536" selection-end-column="29" />
+        <state relative-caret-position="344">
+          <caret line="521" column="89" selection-start-line="521" selection-start-column="89" selection-end-line="521" selection-end-column="89" />
           <folding>
             <element signature="method#buyStopOrder#0;class#OrderServiceImpl#0" />
             <element signature="method#buyCancelOrder#0;class#OrderServiceImpl#0" />
@@ -982,7 +991,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>admin</last-edited>
+          <last-edited>demo:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

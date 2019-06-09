@@ -23,7 +23,7 @@ public class OrderServiceImplTest {
 
     @Before
     public void before() throws Exception {
- //    redisHandler.set("buyMarketDepth1", null);
+   //  redisHandler.set("buyMarketDepth1", null);
 //        redisHandler.set("sellStopOrder", null);
  //       redisHandler.set("sellMarketDepth1", null);
 //        redisHandler.set("buyStopOrder", null);
@@ -107,6 +107,14 @@ public class OrderServiceImplTest {
         order.setPrice(1244);
         orderServiceImpl.buyLimitOrder(order);
 
+
+//
+//        order = new Order();
+//        order.setType("market");
+//        order.setProductId(1);
+//        order.setQuantity(500);
+//        order.setBroker("broker");
+//        orderServiceImpl.sellMarketOrder(order);
     }
 
     @Test
@@ -231,5 +239,10 @@ public class OrderServiceImplTest {
 
     @Test
     public void sendOrderBlotter() {
+    }
+
+    @Test
+    public void getMarketDepth() {
+        orderServiceImpl.getMarketDepth(1);
     }
 }

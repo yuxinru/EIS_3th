@@ -14,9 +14,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 @Service("OrderService")
 @Slf4j
@@ -33,38 +31,34 @@ public class OrderServiceImpl implements OrderService {
     @Resource
     private ActiveMQHandler activeMQHandler;
 
-    private void sendOrderBlotter(Integer productId){
-        List<Object> objects = orderHandler.getOrderBlotter(productId);
-        LinkedList<Orderblotter> orderblotters = new LinkedList<>();
-        ListIterator<Object> listIterator = objects.listIterator();
-
-        Object o;
-        while(listIterator.hasNext()){
-            o = listIterator.next();
-            orderblotters.add((Orderblotter)o);
-        }
-        log.info("定时发送orderblotters"+ productId + ": " );
-        activeMQHandler.send("OrderBlotter"+productId, orderblotters);
-    }
 
 //    @Scheduled(fixedRate=5000)
 //    @Async
     public void sendOrderBlotters(){
-       for(int i = 1;i<=4;i++){
-           sendOrderBlotter(i);
-       }
+        OrderBlotters orderBlotters = orderHandler.getOrderBlotters();
 
+        log.info("定时发送orderBlotters" + ": " );
+        activeMQHandler.send("OrderBlotters", orderBlotters);
     }
 
 //    @Async
 //    @Scheduled(fixedDelay = 5000)
     public void sendMarketDepths(){
-        MarketDepth marketDepth = new MarketDepth();
-        for(int i = 1;i<=4;i++){
-            marketDepth.buyMarketDepth = orderHandler.getBuyMarketDepth(i).amountMap;
-            marketDepth.sellMarketDepth = orderHandler.getSellMarketDepth(i).amountMap;
-            log.info("定时发送MarketDepth"+ i + ": " );
-            activeMQHandler.send("MarketDepth"+i, marketDepth);
+        MarketDepths marketDepths = new MarketDepths();
+        for(int i = 1;i<=10;i++){
+            TreeMap<Integer, Integer> buyMarketDepth = orderHandler.getBuyMarketDepth(i).amountMap;
+            TreeMap<Integer, Integer> sellMarketDepth = orderHandler.getSellMarketDepth(i).amountMap;
+            for(int j =0; j<3&&sellMarketDepth.size()!=0; j++){
+                marketDepths.marketDepths.add(0,new MarketDepth(null, null,sellMarketDepth.firstKey(), sellMarketDepth.firstEntry().getValue() , j+1));
+                sellMarketDepth.remove(sellMarketDepth.firstKey());
+            }
+            for(int j =0; j<3&&buyMarketDepth.size()!=0; j++){
+                marketDepths.marketDepths.add(new MarketDepth(j+1, buyMarketDepth.lastEntry().getValue(),buyMarketDepth.lastKey(), null, null));
+                buyMarketDepth.remove(buyMarketDepth.lastKey());
+            }
+
+            log.info("定时发送MarketDepthS"+ i + ": " );
+            activeMQHandler.send("MarketDepthS"+i, marketDepths);
         }
     }
 
@@ -80,7 +74,7 @@ public class OrderServiceImpl implements OrderService {
         orderblotter.setCplTrader("");
         orderblotter.setCplSide(CplOrder.getSide());
         //orderblotterDAO.insert(orderblotter);
-        orderHandler.setOrderBlotter(orderblotter, IniOrder.getProductId());
+        orderHandler.setOrderBlotter(orderblotter);
         return true;
     }
     private boolean buy(Order order){
@@ -524,18 +518,26 @@ public class OrderServiceImpl implements OrderService {
         return -1;
     }
     @Override
-    public List<Orderblotter> getOrderBlotter(Order order){
-        List<Object> objects = orderHandler.getOrderBlotter(order.getProductId());
-        ListIterator<Object> listIterator = objects.listIterator();
-        LinkedList<Orderblotter> orderblotters = new LinkedList<>();
-
-        Object o;
-        while(listIterator.hasNext()){
-            o = listIterator.next();
-            orderblotters.add((Orderblotter)o);
-        }
+    public List<Orderblotter> getOrderBlotter(){
+        List<Orderblotter> orderblotters = orderHandler.getOrderBlotters().orderblotters;
         return orderblotters;
     }
 
+    @Override
+    public List<MarketDepth> getMarketDepth(int productId){
+        List<MarketDepth> marketDepths = new LinkedList<>();
+        TreeMap<Integer, Integer> buyMarketDepth = orderHandler.getBuyMarketDepth(productId).amountMap;
+        TreeMap<Integer, Integer> sellMarketDepth = orderHandler.getSellMarketDepth(productId).amountMap;
+        for(int j =0; j<3&&sellMarketDepth.size()!=0; j++){
+            marketDepths.add(0,new MarketDepth(null, null,sellMarketDepth.firstKey(), sellMarketDepth.firstEntry().getValue() , j+1));
+            sellMarketDepth.remove(sellMarketDepth.firstKey());
+        }
+        for(int j =0; j<3&&buyMarketDepth.size()!=0; j++){
+            marketDepths.add(new MarketDepth(j+1, buyMarketDepth.lastEntry().getValue(),buyMarketDepth.lastKey(), null, null));
+            buyMarketDepth.remove(buyMarketDepth.lastKey());
+        }
+        log.info(marketDepths.toString());
+        return marketDepths;
+    }
 
 }

@@ -91,11 +91,11 @@ public class OrderHandlerTest {
     @Test
     public void setOrderBlotter() {
         Orderblotter orderblotter = new Orderblotter(1, "broker", 1, new Date(), 123, 123, "trader", "buy", "rrrr", "sell");
-        orderHandler.setOrderBlotter(orderblotter, 1);
+        orderHandler.setOrderBlotter(orderblotter);
     }
 
     @Test
     public void getOrderBlotter() {
-        orderHandler.getOrderBlotter(1);
+        orderHandler.getOrderBlotter();
     }
 }

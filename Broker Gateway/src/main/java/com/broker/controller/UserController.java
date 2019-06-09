@@ -46,9 +46,11 @@ public class UserController {
         int i = userService.login(user);
         if (i == 1) {
             HttpSession session = request.getSession();
-            session.setAttribute("username", user.getUsername());
+            session.setAttribute("username", user);
+            log.info("登陆成功!");
             return new Resp("success", "登陆成功!");
         } else if (i == -1) {
+            log.info("密码错误!");
             return new Resp("error", "密码错误!");
         }
         return new Resp("error", "用户名不存在!");
@@ -56,7 +58,7 @@ public class UserController {
     //用户注册
     @RequestMapping(value="/register",method= RequestMethod.POST)
     public Resp register(@RequestBody User user){
-
+        log.info(user.toString());
         int i = userService.registerUser(user);
         if (i == 1) {
             return new Resp("success", "注册成功!");
@@ -64,5 +66,14 @@ public class UserController {
             return new Resp("error", "用户名重复，注册失败!");
         }
         return new Resp("error", "注册失败!");
+    }
+    //用户注册
+    @RequestMapping(value="/logout",method= RequestMethod.GET)
+    public Resp logout(HttpServletRequest request){
+        log.info("logout");
+        HttpSession session = request.getSession();
+        session.setAttribute("username", null);
+
+        return new Resp("success", "注销成功!");
     }
 }
