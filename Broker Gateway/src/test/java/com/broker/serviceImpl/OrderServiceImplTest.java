@@ -1,6 +1,6 @@
 package com.broker.serviceImpl;
 
-import com.broker.parameter.Order;
+import com.broker.entity.Order;
 import com.broker.handler.RedisHandler;
 import org.junit.After;
 import org.junit.Before;
@@ -23,9 +23,9 @@ public class OrderServiceImplTest {
 
     @Before
     public void before() throws Exception {
-   //  redisHandler.set("buyMarketDepth1", null);
+  //   redisHandler.set("buyMarketDepth1", null);
 //        redisHandler.set("sellStopOrder", null);
- //       redisHandler.set("sellMarketDepth1", null);
+  //      redisHandler.set("sellMarketDepth1", null);
 //        redisHandler.set("buyStopOrder", null);
     }
 
@@ -55,14 +55,19 @@ public class OrderServiceImplTest {
 
     @Test
     public void buyLimitOrder() {
+        redisHandler.set("buyMarketDepth1", null);
+
         Order order = new Order();
         order.setType("limit");
         order.setProductId(1);
+        order.setUsername("admin");
         order.setQuantity(30);
         order.setBroker("broker");
         order.setPrice(1248);
+        order.setStrategy("iceburg");
         orderServiceImpl.buyLimitOrder(order);
         order = new Order();
+        order.setUsername("admin");
         order.setType("limit");
         order.setProductId(1);
         order.setQuantity(30);
@@ -70,6 +75,7 @@ public class OrderServiceImplTest {
         order.setPrice(1248);
         orderServiceImpl.buyLimitOrder(order);
         order = new Order();
+        order.setUsername("admin");
         order.setType("limit");
         order.setProductId(1);
         order.setQuantity(30);
@@ -78,6 +84,7 @@ public class OrderServiceImplTest {
         orderServiceImpl.buyLimitOrder(order);
 
         order = new Order();
+        order.setUsername("admin");
         order.setType("limit");
         order.setProductId(1);
         order.setQuantity(120);
@@ -85,6 +92,7 @@ public class OrderServiceImplTest {
         order.setPrice(1246);
         orderServiceImpl.buyLimitOrder(order);
         order = new Order();
+        order.setUsername("admin");
         order.setType("limit");
         order.setProductId(1);
         order.setQuantity(220);
@@ -93,6 +101,7 @@ public class OrderServiceImplTest {
         orderServiceImpl.buyLimitOrder(order);
 
         order = new Order();
+        order.setUsername("admin");
         order.setType("limit");
         order.setProductId(1);
         order.setQuantity(97);
@@ -100,9 +109,11 @@ public class OrderServiceImplTest {
         order.setPrice(1244);
         orderServiceImpl.buyLimitOrder(order);
         order = new Order();
+        order.setUsername("admin");
         order.setType("limit");
         order.setProductId(1);
         order.setQuantity(90);
+        order.setStrategy("iceburg");
         order.setBroker("broker");
         order.setPrice(1244);
         orderServiceImpl.buyLimitOrder(order);
@@ -133,7 +144,7 @@ public class OrderServiceImplTest {
         Order order = new Order();
         order.setCancelId(4);
         order.setPrice(1250);
-        orderServiceImpl.buyCancelOrder(order);
+        orderServiceImpl.cancelOrder(order);
     }
 
     @Test
@@ -141,7 +152,7 @@ public class OrderServiceImplTest {
         Order order = new Order();
         order.setType("market");
         order.setProductId(1);
-        order.setQuantity(370);
+        order.setQuantity(400);
         order.setBroker("broker");
         orderServiceImpl.sellMarketOrder(order);
     }
@@ -244,5 +255,9 @@ public class OrderServiceImplTest {
     @Test
     public void getMarketDepth() {
         orderServiceImpl.getMarketDepth(1);
+    }
+
+    @Test
+    public void getMyOrder() {
     }
 }

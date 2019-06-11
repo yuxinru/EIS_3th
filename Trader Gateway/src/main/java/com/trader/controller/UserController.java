@@ -45,7 +45,7 @@ public class UserController {
         int i = userService.login(user);
         if (i == 1) {
             HttpSession session = request.getSession();
-            session.setAttribute("username", user);
+            session.setAttribute("user", user);
             log.info("登陆成功!");
             return new Resp("success", "登陆成功!");
         } else if (i == -1) {
@@ -65,6 +65,15 @@ public class UserController {
             return new Resp("error", "用户名重复，注册失败!");
         }
         return new Resp("error", "注册失败!");
+    }
+    //用户注册
+    @RequestMapping(value="/information",method= RequestMethod.GET)
+    public User information(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        log.info(user.toString());
+        return userService.getInfo(user.getUsername());
+
     }
     //用户注册
     @RequestMapping(value="/logout",method= RequestMethod.GET)

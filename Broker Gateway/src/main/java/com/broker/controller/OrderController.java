@@ -55,21 +55,20 @@ public class OrderController {
                 return orderService.getMarketDepth(6);
             }
         }
-        else if(product.equals("steel")){
-            if(period.equals("FEB1")){
-                return orderService.getMarketDepth(7);
-            }
-            if(period.equals("AUG13")){
-                return orderService.getMarketDepth(8);
-            }
-            if(period.equals("APR7")){
-                return orderService.getMarketDepth(9);
-            }
-            if(period.equals("NOV12")){
-                return orderService.getMarketDepth(10);
-            }
-        }
-
+//        else if(product.equals("steel")){
+//            if(period.equals("FEB1")){
+//                return orderService.getMarketDepth(7);
+//            }
+//            if(period.equals("AUG13")){
+//                return orderService.getMarketDepth(8);
+//            }
+//            if(period.equals("APR7")){
+//                return orderService.getMarketDepth(9);
+//            }
+//            if(period.equals("NOV12")){
+//                return orderService.getMarketDepth(10);
+//            }
+//        }
         return null;
     }
 }

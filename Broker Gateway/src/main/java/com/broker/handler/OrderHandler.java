@@ -27,26 +27,17 @@ public class OrderHandler {
         redisHandler.set("blotterId" , ret + 1);
         return ret;
     }
-    public int getBuyOrderId(Integer productId){
-        if(redisHandler.get("buyOrderId" + productId) == null){
-            redisHandler.set("buyOrderId" + productId, 2);
+    public int getOrderId(Integer productId){
+        if(redisHandler.get("OrderId" + productId) == null){
+            redisHandler.set("OrderId" + productId, 2);
             return 1;
         }
         int ret;
-        ret = (Integer) redisHandler.get("buyOrderId" + productId);
-        redisHandler.set("buyOrderId" + productId, ret + 1);
+        ret = (Integer) redisHandler.get("OrderId" + productId);
+        redisHandler.set("OrderId" + productId, ret + 1);
         return ret;
     }
-    public int getSellOrderId(Integer productId){
-        if(redisHandler.get("sellOrderId" + productId) == null){
-            redisHandler.set("sellOrderId" + productId, 2);
-            return 1;
-        }
-        int ret;
-        ret = (Integer)redisHandler.get("sellOrderId" + productId);
-        redisHandler.set("sellOrderId" + productId, ret + 1);
-        return ret;
-    }
+
     public BuyMarketDepth getBuyMarketDepth(Integer productId){
 
         if(redisHandler.get("buyMarketDepth" + productId) == null){
@@ -58,9 +49,9 @@ public class OrderHandler {
         }
         BuyMarketDepth buyMarketDepth;
         buyMarketDepth = JSONObject.parseObject((String) redisHandler.get("buyMarketDepth" + productId), BuyMarketDepth.class);
-        log.info("redis中得到buyMarketDepth" + productId);
-        log.info("buyMarketDepth Map "+ buyMarketDepth.map.toString());
-        log.info("buyMarketDepth 总量 "+ buyMarketDepth.total);
+//        log.info("redis中得到buyMarketDepth" + productId);
+//        log.info("buyMarketDepth Map "+ buyMarketDepth.map.toString());
+//        log.info("buyMarketDepth 总量 "+ buyMarketDepth.total);
         return buyMarketDepth;
     }
     public SellMarketDepth getSellMarketDepth(Integer productId){
@@ -72,25 +63,27 @@ public class OrderHandler {
         }
         SellMarketDepth sellMarketDepth;
         sellMarketDepth = JSONObject.parseObject((String) redisHandler.get("sellMarketDepth" + productId), SellMarketDepth.class);
-        log.info("redis中得到sellMarketDepth" + productId);
-        log.info("sellMarketDepth Map "+ sellMarketDepth.map.toString());
-        log.info("sellMarketDepth 总量 "+ sellMarketDepth.total);
+//        log.info("redis中得到sellMarketDepth" + productId);
+//        log.info("sellMarketDepth Map "+ sellMarketDepth.map.toString());
+//        log.info("buyMarketDepth hideMap "+ sellMarketDepth.hideMap.toString());
+//        log.info("sellMarketDepth 总量 "+ sellMarketDepth.total);
         return sellMarketDepth;
     }
     public Boolean setBuyMarketDepth(BuyMarketDepth buyMarketDepth, Integer productId){
-        log.info("buyMarketDepth存到redis");
-        log.info("buyMarketDepth Map "+ buyMarketDepth.map.toString());
-        log.info("buyMarketDepth amountMap "+ buyMarketDepth.amountMap.toString());
-        log.info("buyMarketDepth 总量 "+ buyMarketDepth.total);
+//        log.info("buyMarketDepth存到redis");
+//        log.info("buyMarketDepth Map "+ buyMarketDepth.map.toString());
+//        log.info("buyMarketDepth amountMap "+ buyMarketDepth.amountMap.toString());
+//        log.info("buyMarketDepth hideMap "+ buyMarketDepth.hideMap.toString());
+//        log.info("buyMarketDepth 总量 "+ buyMarketDepth.total);
         redisHandler.set("buyMarketDepth" + productId, JSONObject.toJSONString(buyMarketDepth));
 
         return true;
     }
     public Boolean setSellMarketDepth(SellMarketDepth sellMarketDepth, Integer productId){
-        log.info("sellMarketDepth存到redis");
-        log.info("sellMarketDepth Map "+ sellMarketDepth.map.toString());
-        log.info("sellMarketDepth amountMap "+ sellMarketDepth.amountMap.toString());
-        log.info("sellMarketDepth 总量 "+ sellMarketDepth.total);
+//        log.info("sellMarketDepth存到redis");
+//        log.info("sellMarketDepth Map "+ sellMarketDepth.map.toString());
+//        log.info("sellMarketDepth amountMap "+ sellMarketDepth.amountMap.toString());
+//        log.info("sellMarketDepth 总量 "+ sellMarketDepth.total);
         redisHandler.set("sellMarketDepth" + productId, JSONObject.toJSONString(sellMarketDepth));
 
         return true;

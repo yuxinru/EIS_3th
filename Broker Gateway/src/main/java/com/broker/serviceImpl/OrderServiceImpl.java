@@ -1,9 +1,7 @@
 package com.broker.serviceImpl;
 
-import com.broker.dao.OrderblotterDAO;
 import com.broker.entity.*;
 import com.broker.handler.OrderHandler;
-import com.broker.parameter.Order;
 import com.broker.service.OrderService;
 import com.broker.handler.ActiveMQHandler;
 import lombok.extern.slf4j.Slf4j;
@@ -32,22 +30,26 @@ public class OrderServiceImpl implements OrderService {
     private ActiveMQHandler activeMQHandler;
 
 
-//    @Scheduled(fixedRate=5000)
+//    @Scheduled(fixedRate=10000)
 //    @Async
     public void sendOrderBlotters(){
         OrderBlotters orderBlotters = orderHandler.getOrderBlotters();
 
         log.info("定时发送orderBlotters" + ": " );
-        activeMQHandler.send("OrderBlotters", orderBlotters);
+        activeMQHandler.send("OrderBlotters1", orderBlotters);
+        activeMQHandler.send("OrderBlotters2", orderBlotters);
     }
 
 //    @Async
-//    @Scheduled(fixedDelay = 5000)
+//    @Scheduled(fixedRate = 10000)
     public void sendMarketDepths(){
         MarketDepths marketDepths = new MarketDepths();
-        for(int i = 1;i<=10;i++){
-            TreeMap<Integer, Integer> buyMarketDepth = orderHandler.getBuyMarketDepth(i).amountMap;
-            TreeMap<Integer, Integer> sellMarketDepth = orderHandler.getSellMarketDepth(i).amountMap;
+        TreeMap<Integer, Integer> buyMarketDepth;
+        TreeMap<Integer, Integer> sellMarketDepth;
+        for(int i = 1;i<=6;i++){
+            marketDepths = new MarketDepths();
+            buyMarketDepth = orderHandler.getBuyMarketDepth(i).hideMap;
+            sellMarketDepth = orderHandler.getSellMarketDepth(i).hideMap;
             for(int j =0; j<3&&sellMarketDepth.size()!=0; j++){
                 marketDepths.marketDepths.add(0,new MarketDepth(null, null,sellMarketDepth.firstKey(), sellMarketDepth.firstEntry().getValue() , j+1));
                 sellMarketDepth.remove(sellMarketDepth.firstKey());
@@ -57,23 +59,24 @@ public class OrderServiceImpl implements OrderService {
                 buyMarketDepth.remove(buyMarketDepth.lastKey());
             }
 
-            log.info("定时发送MarketDepthS"+ i + ": " );
-            activeMQHandler.send("MarketDepthS"+i, marketDepths);
+            log.info("定时发送MarketDepths"+ i + ": " );
+            activeMQHandler.send("MarketDepths"+i, marketDepths);
         }
     }
 
     private boolean makeBlotter(Order IniOrder, Order CplOrder, int quantity){
         Orderblotter orderblotter = new Orderblotter();
         orderblotter.setBroker(IniOrder.getBroker());
-        orderblotter.setProductid(IniOrder.getProductId());
+        orderblotter.setProduct(IniOrder.getProduct());
         orderblotter.setPeriod(IniOrder.getPeriod());
         orderblotter.setPrice(IniOrder.getPrice());
         orderblotter.setQuantity(quantity);
-        orderblotter.setIniTrader("");
+        orderblotter.setIniTrader(IniOrder.getUsername());
         orderblotter.setIniSide(IniOrder.getSide());
-        orderblotter.setCplTrader("");
+        orderblotter.setCplTrader(CplOrder.getUsername());
         orderblotter.setCplSide(CplOrder.getSide());
         //orderblotterDAO.insert(orderblotter);
+        log.info("订单成交"+ orderblotter.toString() );
         orderHandler.setOrderBlotter(orderblotter);
         return true;
     }
@@ -87,11 +90,17 @@ public class OrderServiceImpl implements OrderService {
         Integer curKey;
         Order order1;
         Integer curAmount;
+        Integer hideAmount;
         ListIterator<Order> listIterator;
         T1:
         while(quantity > 0){
             orderList = sellMarketDepth.map.firstEntry().getValue();
             curAmount = sellMarketDepth.amountMap.firstEntry().getValue();
+            if(sellMarketDepth.hideMap.firstEntry()==null){
+                hideAmount = 0;
+            }else{
+                hideAmount = sellMarketDepth.hideMap.firstEntry().getValue();
+            }
             assert (orderList.peek().getPrice().equals(sellMarketDepth.amountMap.firstEntry().getKey()));
             curKey = orderList.peek().getPrice();
             listIterator=orderList.listIterator();
@@ -106,18 +115,30 @@ public class OrderServiceImpl implements OrderService {
                         listIterator.set(order1);
                         sellMarketDepth.map.put(curKey, orderList);
                         sellMarketDepth.amountMap.put(curKey, curAmount);
+                        if(order.getStrategy()==null||!order1.getStrategy().equals("iceburg")){
+                            hideAmount -= quantity;
+                            sellMarketDepth.hideMap.put(curKey, hideAmount);
+                        }
                         break T1;
                     }
                     else if(order1.getQuantity().equals(quantity)) {
                         listIterator.remove();
                         makeBlotter(order1, order, quantity);
                         sellMarketDepth.amountMap.put(curKey, curAmount);
+                        if(order.getStrategy()==null||!order1.getStrategy().equals("iceburg")){
+                            hideAmount -= order1.getQuantity();
+                            sellMarketDepth.hideMap.put(curKey, hideAmount);
+                        }
                         break T1;
                     }
                     else{
                         listIterator.remove();
                         makeBlotter(order1, order, order1.getQuantity());
                         quantity -= order1.getQuantity();
+                        if(order.getStrategy()==null||!order1.getStrategy().equals("iceburg")){
+                            hideAmount -= order1.getQuantity();
+                            sellMarketDepth.hideMap.put(curKey, hideAmount);
+                        }
                     }
                 }
             }
@@ -126,10 +147,15 @@ public class OrderServiceImpl implements OrderService {
                 while(listIterator.hasNext()){//此价格数量不足或相等
                     order1 = listIterator.next();
                     makeBlotter(order1, order, order1.getQuantity());
+                    if(order.getStrategy()==null||!order1.getStrategy().equals("iceburg")){
+                        hideAmount -= order1.getQuantity();
+                        sellMarketDepth.hideMap.put(curKey, hideAmount);
+                    }
                 }
             }
             sellMarketDepth.map.remove(curKey);
             sellMarketDepth.amountMap.remove(curKey);
+            sellMarketDepth.hideMap.remove(curKey);
         }
 
         orderHandler.setSellMarketDepth(sellMarketDepth, order.getProductId());
@@ -146,11 +172,17 @@ public class OrderServiceImpl implements OrderService {
         Order order1;
         Integer curKey;
         Integer curAmount;
+        Integer hideAmount;
         ListIterator<Order> listIterator;
         T2:
         while(quantity > 0){
             orderList = buyMarketDepth.map.lastEntry().getValue();
             curAmount = buyMarketDepth.amountMap.lastEntry().getValue();
+            if(buyMarketDepth.hideMap.lastEntry()== null){
+                hideAmount = 0;
+            }else{
+                hideAmount = buyMarketDepth.hideMap.lastEntry().getValue();
+            }
             assert (orderList.peek().getPrice().equals(buyMarketDepth.amountMap.lastEntry().getKey()));
             curKey = orderList.peek().getPrice();
             listIterator=orderList.listIterator();
@@ -164,16 +196,28 @@ public class OrderServiceImpl implements OrderService {
                         listIterator.set(order1);
                         buyMarketDepth.map.put(curKey, orderList);
                         buyMarketDepth.amountMap.put(curKey, curAmount);
+                        if(order.getStrategy()==null||!order1.getStrategy().equals("iceburg")){
+                            hideAmount -= quantity;
+                            buyMarketDepth.hideMap.put(curKey, hideAmount);
+                        }
+
                         break T2;
                     }
                     else if(order1.getQuantity().equals(quantity)){
                         listIterator.remove();
                         buyMarketDepth.amountMap.put(curKey, curAmount);
                         makeBlotter(order1, order, quantity);
+                        if(order.getStrategy()==null||!order1.getStrategy().equals("iceburg")){
+                            hideAmount -= order1.getQuantity();
+                            buyMarketDepth.hideMap.put(curKey, hideAmount);
+                        }
                         break T2;
                     }else{
                         listIterator.remove();
                         makeBlotter(order1, order, order1.getQuantity());
+                        if(order.getStrategy()==null||!order1.getStrategy().equals("iceburg")){
+                            hideAmount -= order1.getQuantity();
+                        }
                         quantity -= order1.getQuantity();
                     }
                 }
@@ -183,10 +227,15 @@ public class OrderServiceImpl implements OrderService {
                 while(listIterator.hasNext()){
                     order1 = listIterator.next();
                     makeBlotter(order1, order, order1.getQuantity());
+                    if(order.getStrategy()==null||!order1.getStrategy().equals("iceburg")){
+                        hideAmount -= order1.getQuantity();
+                        buyMarketDepth.hideMap.put(curKey, hideAmount);
+                    }
                 }
             }
             buyMarketDepth.map.remove(curKey);
             buyMarketDepth.amountMap.remove(curKey);
+            buyMarketDepth.hideMap.remove(curKey);
         }
 
         orderHandler.setBuyMarketDepth(buyMarketDepth, order.getProductId());
@@ -268,7 +317,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Integer buyMarketOrder(Order order) {
-        order.setOrderId(orderHandler.getBuyOrderId(order.getProductId()));
+        order.setOrderId(orderHandler.getOrderId(order.getProductId()));
         if(!buy(order)){
             return -1;
         }
@@ -279,7 +328,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Integer buyLimitOrder(Order order){
-        order.setOrderId(orderHandler.getBuyOrderId(order.getProductId()));
+        order.setOrderId(orderHandler.getOrderId(order.getProductId()));
         SellMarketDepth sellMarketDepth = orderHandler.getSellMarketDepth(order.getProductId());
         if(sellMarketDepth.map.firstEntry() != null){
             int curSellPrice = sellMarketDepth.map.firstEntry().getValue().peek().getPrice();
@@ -311,6 +360,16 @@ public class OrderServiceImpl implements OrderService {
         }
         qty += order.getQuantity();
         buyMarketDepth.amountMap.put(order.getPrice(), qty);
+        //none iceburg twap vwap
+        if(order.getStrategy()==null || !order.getStrategy().equals("iceburg")){
+            if(buyMarketDepth.hideMap.get(order.getPrice()) == null){
+                qty = new Integer(0);
+            }else{
+                qty= buyMarketDepth.hideMap.get(order.getPrice());
+            }
+            qty += order.getQuantity();
+            buyMarketDepth.hideMap.put(order.getPrice(), qty);
+        }
 
         orderHandler.setBuyMarketDepth(buyMarketDepth, order.getProductId());
 
@@ -319,7 +378,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Integer buyStopOrder(Order order){
-        order.setOrderId(orderHandler.getBuyOrderId(order.getProductId()));
+        order.setOrderId(orderHandler.getOrderId(order.getProductId()));
         BuyStopOrder buyStopOrder = orderHandler.getBuyStopOrder(order.getProductId());
         LinkedList<Order> stopOrderList;
         Integer price = order.getPrice();
@@ -335,64 +394,11 @@ public class OrderServiceImpl implements OrderService {
         return 1;
     }
 
-    @Override
-    public Integer buyCancelOrder(Order order){
-        order.setOrderId(orderHandler.getBuyOrderId(order.getProductId()));
-        BuyMarketDepth buyMarketDepth = orderHandler.getBuyMarketDepth(order.getProductId());
-        if(buyMarketDepth.map.get(order.getPrice()) == null){
-            return -1;
-        }
-        LinkedList<Order> orderList = buyMarketDepth.map.get(order.getPrice());
 
-        ListIterator<Order> listIterator=orderList.listIterator();
-
-        Order order1;
-        boolean flag = false;
-        int ret = 0;
-        while(listIterator.hasNext()){
-            order1 = listIterator.next();
-            if(order1.getOrderId().equals(order.getCancelId())){
-                flag = true;
-                ret = order1.getQuantity();
-                listIterator.remove();
-                break;
-            }
-        }
-        if(flag){
-            buyMarketDepth.map.put(order.getPrice(), orderList);
-            buyMarketDepth.total -= ret;
-            orderHandler.setBuyMarketDepth(buyMarketDepth, order.getProductId());
-            return ret;
-        }
-        BuyStopOrder buyStopOrder = new BuyStopOrder();
-        if(buyStopOrder.stopOrderMap.get(order.getPrice()) == null)
-            return -1;
-        orderList = buyStopOrder.stopOrderMap.get(order.getPrice());
-        listIterator= orderList.listIterator();
-        flag = false;
-        ret = 0;
-        while(listIterator.hasNext()){
-            order1 = listIterator.next();
-            if(order1.getOrderId().equals(order.getCancelId())){
-                flag = true;
-                ret = order1.getQuantity();
-                listIterator.remove();
-                break;
-            }
-        }
-        if(flag){
-            buyStopOrder.stopOrderMap.put(order.getPrice(), orderList);
-            buyStopOrder.total -= ret;
-            orderHandler.setBuyStopOrder(buyStopOrder, order.getProductId());
-            return ret;
-        }
-        return -1;
-
-    }
 
     @Override
     public Integer sellMarketOrder(Order order){
-        order.setOrderId(orderHandler.getSellOrderId(order.getProductId()));
+        order.setOrderId(orderHandler.getOrderId(order.getProductId()));
         if(!sell(order)){
             return  -1;
         }
@@ -404,7 +410,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Integer sellLimitOrder(Order order){
-        order.setOrderId(orderHandler.getSellOrderId(order.getProductId()));
+        order.setOrderId(orderHandler.getOrderId(order.getProductId()));
         BuyMarketDepth buyMarketDepth = orderHandler.getBuyMarketDepth(order.getProductId());
         if(buyMarketDepth.map.firstEntry() != null){
             int curBuyPrice = buyMarketDepth.map.lastEntry().getValue().peek().getPrice();
@@ -437,6 +443,15 @@ public class OrderServiceImpl implements OrderService {
         qty += order.getQuantity();
         sellMarketDepth.amountMap.put(order.getPrice(), qty);
 
+        if(order.getStrategy()==null||!order.getStrategy().equals("iceburg")){
+            if(sellMarketDepth.hideMap.get(order.getPrice()) == null){
+                qty = new Integer(0);
+            }else{
+                qty= sellMarketDepth.hideMap.get(order.getPrice());
+            }
+            qty += order.getQuantity();
+            sellMarketDepth.hideMap.put(order.getPrice(), qty);
+        }
         orderHandler.setSellMarketDepth(sellMarketDepth, order.getProductId());
 
         return 1;
@@ -445,7 +460,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Integer sellStopOrder(Order order){
         SellStopOrder sellStopOrder = orderHandler.getSellStopOrder(order.getProductId());
-        order.setOrderId(orderHandler.getSellOrderId(order.getProductId()));
+        order.setOrderId(orderHandler.getOrderId(order.getProductId()));
         LinkedList<Order> stopOrderList;
         Integer price = order.getPrice();
         assert(sellStopOrder != null);
@@ -464,9 +479,10 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Integer sellCancelOrder(Order order){
+    public Integer cancelOrder(Order order){
+        if(order.getCancelId()== null)
+            return -1;
         SellMarketDepth sellMarketDepth = orderHandler.getSellMarketDepth(order.getProductId());
-        order.setOrderId(orderHandler.getSellOrderId(order.getProductId()));
 
         if(sellMarketDepth.map.get(order.getPrice()) == null){
             return -1;
@@ -515,6 +531,53 @@ public class OrderServiceImpl implements OrderService {
             orderHandler.setSellStopOrder(sellStopOrder, order.getProductId());
             return ret;
         }
+        BuyMarketDepth buyMarketDepth = orderHandler.getBuyMarketDepth(order.getProductId());
+        if(buyMarketDepth.map.get(order.getPrice()) == null){
+            return -1;
+        }
+        orderList = buyMarketDepth.map.get(order.getPrice());
+
+        listIterator=orderList.listIterator();
+
+        flag = false;
+        ret = 0;
+        while(listIterator.hasNext()){
+            order1 = listIterator.next();
+            if(order1.getOrderId().equals(order.getCancelId())){
+                flag = true;
+                ret = order1.getQuantity();
+                listIterator.remove();
+                break;
+            }
+        }
+        if(flag){
+            buyMarketDepth.map.put(order.getPrice(), orderList);
+            buyMarketDepth.total -= ret;
+            orderHandler.setBuyMarketDepth(buyMarketDepth, order.getProductId());
+            return ret;
+        }
+        BuyStopOrder buyStopOrder = new BuyStopOrder();
+        if(buyStopOrder.stopOrderMap.get(order.getPrice()) == null)
+            return -1;
+        orderList = buyStopOrder.stopOrderMap.get(order.getPrice());
+        listIterator= orderList.listIterator();
+        flag = false;
+        ret = 0;
+        while(listIterator.hasNext()){
+            order1 = listIterator.next();
+            if(order1.getOrderId().equals(order.getCancelId())){
+                flag = true;
+                ret = order1.getQuantity();
+                listIterator.remove();
+                break;
+            }
+        }
+        if(flag){
+            buyStopOrder.stopOrderMap.put(order.getPrice(), orderList);
+            buyStopOrder.total -= ret;
+            orderHandler.setBuyStopOrder(buyStopOrder, order.getProductId());
+            return ret;
+        }
         return -1;
     }
     @Override
@@ -528,11 +591,11 @@ public class OrderServiceImpl implements OrderService {
         List<MarketDepth> marketDepths = new LinkedList<>();
         TreeMap<Integer, Integer> buyMarketDepth = orderHandler.getBuyMarketDepth(productId).amountMap;
         TreeMap<Integer, Integer> sellMarketDepth = orderHandler.getSellMarketDepth(productId).amountMap;
-        for(int j =0; j<3&&sellMarketDepth.size()!=0; j++){
+        for(int j =0; j<5&&sellMarketDepth.size()!=0; j++){
             marketDepths.add(0,new MarketDepth(null, null,sellMarketDepth.firstKey(), sellMarketDepth.firstEntry().getValue() , j+1));
             sellMarketDepth.remove(sellMarketDepth.firstKey());
         }
-        for(int j =0; j<3&&buyMarketDepth.size()!=0; j++){
+        for(int j =0; j<5&&buyMarketDepth.size()!=0; j++){
             marketDepths.add(new MarketDepth(j+1, buyMarketDepth.lastEntry().getValue(),buyMarketDepth.lastKey(), null, null));
             buyMarketDepth.remove(buyMarketDepth.lastKey());
         }
@@ -540,4 +603,35 @@ public class OrderServiceImpl implements OrderService {
         return marketDepths;
     }
 
+    private List<Order> search(TreeMap<Integer, LinkedList<Order>> map, String username, int productId){
+        Orders orders = new Orders();
+
+        for(LinkedList<Order> orderList: map.values()){
+            ListIterator<Order> listIterator= orderList.listIterator();
+            while(listIterator.hasNext()){
+                Order order = listIterator.next();
+                if(order.getUsername()!=null && order.getUsername().equals(username)){
+                    orders.orders.add(order);
+                }
+            }
+        }
+        return orders.orders;
+    }
+    @Override
+    public void getMyOrder(String username, int productId, int trader){
+        Orders orders = new Orders();
+        SellMarketDepth sellMarketDepth = orderHandler.getSellMarketDepth(productId);
+        orders.orders.addAll(search(sellMarketDepth.map, username, productId));
+
+        BuyMarketDepth buyMarketDepth = orderHandler.getBuyMarketDepth(productId);
+        orders.orders.addAll(search(buyMarketDepth.map, username, productId));
+
+        SellStopOrder sellStopOrder = orderHandler.getSellStopOrder(productId);
+        orders.orders.addAll(search(sellStopOrder.stopOrderMap, username, productId));
+
+        BuyStopOrder buyStopOrder = orderHandler.getBuyStopOrder(productId);
+        orders.orders.addAll(search(buyStopOrder.stopOrderMap, username, productId));
+
+        activeMQHandler.send("MyOrder"+trader, orders);
+    }
 }

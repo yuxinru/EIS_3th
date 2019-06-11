@@ -8,9 +8,9 @@ public class OrderBlotter implements Serializable {
 
     private String broker;
 
-    private Integer productid;
+    private String product;
 
-    private Date period;
+    private String period;
 
     private Integer price;
 
@@ -26,10 +26,10 @@ public class OrderBlotter implements Serializable {
 
     public OrderBlotter(){}
 
-    public OrderBlotter(Integer tradeid, String broker, Integer productid, Date period, Integer price, Integer quantity, String iniTrader, String iniSide, String cplTrader, String cplSide) {
+    public OrderBlotter(Integer tradeid, String broker, String product, String period, Integer price, Integer quantity, String iniTrader, String iniSide, String cplTrader, String cplSide) {
         this.tradeid = tradeid;
         this.broker = broker;
-        this.productid = productid;
+        this.product = product;
         this.period = period;
         this.price = price;
         this.quantity = quantity;
@@ -57,19 +57,19 @@ public class OrderBlotter implements Serializable {
         this.broker = broker;
     }
 
-    public Integer getProductid() {
-        return productid;
+    public String getProduct() {
+        return product;
     }
 
-    public void setProductid(Integer productid) {
-        this.productid = productid;
+    public void setProduct(String product) {
+        this.product = product;
     }
 
-    public Date getPeriod() {
+    public String getPeriod() {
         return period;
     }
 
-    public void setPeriod(Date period) {
+    public void setPeriod(String period) {
         this.period = period;
     }
 
@@ -126,8 +126,8 @@ public class OrderBlotter implements Serializable {
         return "OrderBlotter{" +
                 "tradeid=" + tradeid +
                 ", broker='" + broker + '\'' +
-                ", productid=" + productid +
-                ", period=" + period +
+                ", product='" + product + '\'' +
+                ", period='" + period + '\'' +
                 ", price=" + price +
                 ", quantity=" + quantity +
                 ", iniTrader='" + iniTrader + '\'' +
