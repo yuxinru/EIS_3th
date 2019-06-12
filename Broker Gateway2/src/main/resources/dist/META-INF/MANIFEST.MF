@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Main-Class: com.broker.Broker2Application
+Class-Path: tomcat-embed-websocket-9.0.19.jar jackson-module-parameter-n
+ ames-2.9.8.jar tomcat-embed-core-9.0.19.jar log4j-to-slf4j-2.11.2.jar s
+ pring-boot-starter-web-2.1.5.RELEASE.jar spring-jms-5.1.7.RELEASE.jar l
+ ogback-classic-1.2.3.jar slf4j-api-1.7.26.jar spring-tx-5.1.7.RELEASE.j
+ ar jedis-2.9.3.jar druid-1.1.10.jar mysql-connector-java-8.0.16.jar spr
+ ing-jcl-5.1.7.RELEASE.jar spring-oxm-5.1.7.RELEASE.jar jboss-logging-3.
+ 3.2.Final.jar spring-beans-5.1.7.RELEASE.jar spring-webmvc-5.1.7.RELEAS
+ E.jar spring-boot-2.1.5.RELEASE.jar jackson-core-2.9.8.jar commons-pool
+ 2-2.5.0.jar mybatis-spring-boot-autoconfigure-1.3.2.jar spring-data-red
+ is-2.1.8.RELEASE.jar spring-boot-starter-tomcat-2.1.5.RELEASE.jar jacks
+ on-databind-2.9.8.jar activemq-openwire-legacy-5.15.9.jar fastjson-1.2.
+ 47.jar snakeyaml-1.23.jar spring-aop-5.1.7.RELEASE.jar spring-boot-star
+ ter-data-redis-2.1.5.RELEASE.jar activemq-broker-5.15.9.jar spring-boot
+ -starter-websocket-2.1.5.RELEASE.jar spring-websocket-5.1.7.RELEASE.jar
+  hibernate-validator-6.0.16.Final.jar spring-core-5.1.7.RELEASE.jar jul
+ -to-slf4j-1.7.26.jar log4j-api-2.11.2.jar mybatis-3.4.6.jar spring-mess
+ aging-5.1.7.RELEASE.jar javax.annotation-api-1.3.2.jar spring-context-s
+ upport-5.1.7.RELEASE.jar hawtbuf-1.11.jar spring-data-keyvalue-2.1.8.RE
+ LEASE.jar logback-core-1.2.3.jar javax.jms-api-2.0.1.jar activemq-clien
+ t-5.15.9.jar guava-18.0.jar spring-jdbc-5.1.7.RELEASE.jar spring-contex
+ t-5.1.7.RELEASE.jar validation-api-2.0.1.Final.jar jackson-datatype-jsr
+ 310-2.9.8.jar spring-boot-starter-jdbc-2.1.5.RELEASE.jar spring-web-5.1
+ .7.RELEASE.jar HikariCP-3.2.0.jar spring-boot-starter-2.1.5.RELEASE.jar
+  spring-boot-starter-json-2.1.5.RELEASE.jar classmate-1.4.0.jar spring-
+ expression-5.1.7.RELEASE.jar spring-boot-starter-logging-2.1.5.RELEASE.
+ jar geronimo-j2ee-management_1.1_spec-1.0.1.jar spring-boot-starter-act
+ ivemq-2.1.5.RELEASE.jar mybatis-spring-boot-starter-1.3.2.jar mybatis-s
+ pring-1.3.2.jar jackson-datatype-jdk8-2.9.8.jar spring-boot-autoconfigu
+ re-2.1.5.RELEASE.jar tomcat-embed-el-9.0.19.jar spring-data-commons-2.1
+ .8.RELEASE.jar jackson-annotations-2.9.0.jar
+

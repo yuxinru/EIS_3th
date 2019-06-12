@@ -1,10 +1,11 @@
 server:
-  port: 8081
+  port: 30230
+  #port: 8082
 spring:
  # messages:
   #  basename: i18n/Messages,i18n/Pages
   jms:
-    pub-sub-domain: true   # 配置消息的类型，如果是true则表示为topic消息，如果为false表示Queue消息
+    pub-sub-domain: false   # 配置消息的类型，如果是true则表示为topic消息，如果为false表示Queue消息
   activemq:
     user: admin    # 连接用户名
     password: admin   # 连接密码
@@ -15,7 +16,7 @@ spring:
   redis:
     host: 127.0.0.1
     port: 6379
-    password:
+    password: foobared
     timeout: 1000
     database: 0
     jedis:
@@ -24,6 +25,10 @@ spring:
         max-idle: 8
         min-idle: 2
         max-wait: 100
+  session:
+    store-type: redis
+    timeout: 2000
+
   datasource:
     url: jdbc:mysql://localhost:3306/broker?useSSL=false&serverTimezone=GMT
     username: root
@@ -41,6 +46,9 @@ logging:
 mybatis:
   typeAliasesPackage: com.broker.entity
   mapperLocations: classpath:mapper/*.xml
+
+
+
 #spring:
 #  kafka:
 #    bootstrap-servers: 127.0.0.1:9092

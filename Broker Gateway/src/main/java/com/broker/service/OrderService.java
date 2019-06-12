@@ -1,11 +1,10 @@
 package com.broker.service;
 
-import com.broker.entity.BuyMarketDepth;
+import com.broker.entity.MarketDepth;
 import com.broker.entity.Order;
 import com.broker.entity.Orderblotter;
 
 import javax.jms.JMSException;
-import java.util.LinkedList;
 import java.util.List;
 
 public interface OrderService {
@@ -17,22 +16,23 @@ public interface OrderService {
 
     Integer buyStopOrder(Order order);
 
-    Integer buyCancelOrder(Order order);
-
     Integer sellMarketOrder(Order order) throws JMSException;
 
     Integer sellLimitOrder(Order order);
 
     Integer sellStopOrder(Order order);
 
-    Integer sellCancelOrder(Order order);
+    Integer cancelOrder(Order order);
 
-    List<BuyMarketDepth> getMarketDepth();
+    List<Orderblotter> getOrderBlotter();
 
-    void sendOrderBlotter();
+    List<MarketDepth> getMarketDepth(int productId);
 
-    void sendSellMarketDepth();
+    void getMyOrder(String username, int productId, int trader);
 
-    void sendBuyMarketDepth();
+    void sendOrderBlotters();
+
+    void sendMarketDepths();
+
 
 }

@@ -6,7 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.TreeMap;
 
 @Component
@@ -15,133 +17,134 @@ public class OrderHandler {
     @Resource
     RedisHandler redisHandler;
 
-    public int getBuyOrderId(){
-        if(redisHandler.get("buyOrderId") == null){
-            redisHandler.set("buyOrderId", 2);
+    private int getBlotterId(){
+        if(redisHandler.get("blotterId") == null){
+            redisHandler.set("blotterId" , 2);
             return 1;
         }
         int ret;
-        ret = (Integer) redisHandler.get("buyOrderId");
-        redisHandler.set("buyOrderId", ret + 1);
+        ret = (Integer) redisHandler.get("blotterId" );
+        redisHandler.set("blotterId" , ret + 1);
         return ret;
     }
-    public int getSellOrderId(){
-        if(redisHandler.get("sellOrderId") == null){
-            redisHandler.set("sellOrderId", 2);
+    public int getOrderId(Integer productId){
+        if(redisHandler.get("OrderId" + productId) == null){
+            redisHandler.set("OrderId" + productId, 2);
             return 1;
         }
         int ret;
-        ret = (Integer)redisHandler.get("sellOrderId");
-        redisHandler.set("sellOrderId", ret + 1);
+        ret = (Integer) redisHandler.get("OrderId" + productId);
+        redisHandler.set("OrderId" + productId, ret + 1);
         return ret;
     }
-    public BuyMarketDepth getBuyMarketDepth(){
 
-        if(redisHandler.get("buyMarketDepth") == null){
+    public BuyMarketDepth getBuyMarketDepth(Integer productId){
+
+        if(redisHandler.get("buyMarketDepth" + productId) == null){
             BuyMarketDepth marketDepth = new BuyMarketDepth();
 
-            redisHandler.set("sellMarketDepth" , JSONObject.toJSONString(marketDepth));
+            redisHandler.set("buyMarketDepth" + productId, JSONObject.toJSONString(marketDepth));
             return marketDepth;
 
         }
         BuyMarketDepth buyMarketDepth;
-        buyMarketDepth = JSONObject.parseObject((String) redisHandler.get("buyMarketDepth"), BuyMarketDepth.class);
-        log.info("redis中得到buyMarketDepth");
-        log.info("buyMarketDepth Map "+ buyMarketDepth.map.toString());
-        log.info("buyMarketDepth 总量 "+ buyMarketDepth.total);
+        buyMarketDepth = JSONObject.parseObject((String) redisHandler.get("buyMarketDepth" + productId), BuyMarketDepth.class);
+//        log.info("redis中得到buyMarketDepth" + productId);
+//        log.info("buyMarketDepth Map "+ buyMarketDepth.map.toString());
+//        log.info("buyMarketDepth 总量 "+ buyMarketDepth.total);
         return buyMarketDepth;
     }
-    public SellMarketDepth getSellMarketDepth(){
+    public SellMarketDepth getSellMarketDepth(Integer productId){
 
-        if(redisHandler.get("sellMarketDepth") == null){
+        if(redisHandler.get("sellMarketDepth" + productId) == null){
             SellMarketDepth marketDepth = new SellMarketDepth();
-            redisHandler.set("sellMarketDepth" , JSONObject.toJSONString(marketDepth));
+            redisHandler.set("sellMarketDepth"  + productId, JSONObject.toJSONString(marketDepth));
             return marketDepth;
         }
         SellMarketDepth sellMarketDepth;
-        sellMarketDepth = JSONObject.parseObject((String) redisHandler.get("sellMarketDepth"), SellMarketDepth.class);
-        log.info("redis中得到sellMarketDepth");
-        log.info("sellMarketDepth Map "+ sellMarketDepth.map.toString());
-        log.info("sellMarketDepth 总量 "+ sellMarketDepth.total);
+        sellMarketDepth = JSONObject.parseObject((String) redisHandler.get("sellMarketDepth" + productId), SellMarketDepth.class);
+//        log.info("redis中得到sellMarketDepth" + productId);
+//        log.info("sellMarketDepth Map "+ sellMarketDepth.map.toString());
+//        log.info("buyMarketDepth hideMap "+ sellMarketDepth.hideMap.toString());
+//        log.info("sellMarketDepth 总量 "+ sellMarketDepth.total);
         return sellMarketDepth;
     }
-    public Boolean setBuyMarketDepth(BuyMarketDepth buyMarketDepth){
-        log.info("buyMarketDepth存到redis");
-        redisHandler.set("buyMarketDepth", JSONObject.toJSONString(buyMarketDepth));
+    public Boolean setBuyMarketDepth(BuyMarketDepth buyMarketDepth, Integer productId){
+//        log.info("buyMarketDepth存到redis");
+//        log.info("buyMarketDepth Map "+ buyMarketDepth.map.toString());
+//        log.info("buyMarketDepth amountMap "+ buyMarketDepth.amountMap.toString());
+//        log.info("buyMarketDepth hideMap "+ buyMarketDepth.hideMap.toString());
+//        log.info("buyMarketDepth 总量 "+ buyMarketDepth.total);
+        redisHandler.set("buyMarketDepth" + productId, JSONObject.toJSONString(buyMarketDepth));
 
-        buyMarketDepth = JSONObject.parseObject((String)redisHandler.get("buyMarketDepth"), BuyMarketDepth.class);
-        log.info("buyMarketDepth Map "+ buyMarketDepth.map.toString());
-        log.info("buyMarketDepth 总量 "+ buyMarketDepth.total);
-        //log.info("get 1250 "+ marketDepth.map.ceilingKey(1250));
-        //log.info("get 111 "+ marketDepth.map.ceilingKey(111));
         return true;
     }
-    public Boolean setSellMarketDepth(SellMarketDepth sellMarketDepth){
-        log.info("sellMarketDepth存到redis");
-        redisHandler.set("sellMarketDepth", JSONObject.toJSONString(sellMarketDepth));
+    public Boolean setSellMarketDepth(SellMarketDepth sellMarketDepth, Integer productId){
+//        log.info("sellMarketDepth存到redis");
+//        log.info("sellMarketDepth Map "+ sellMarketDepth.map.toString());
+//        log.info("sellMarketDepth amountMap "+ sellMarketDepth.amountMap.toString());
+//        log.info("sellMarketDepth 总量 "+ sellMarketDepth.total);
+        redisHandler.set("sellMarketDepth" + productId, JSONObject.toJSONString(sellMarketDepth));
 
-        sellMarketDepth = JSONObject.parseObject((String)redisHandler.get("sellMarketDepth"), SellMarketDepth.class);
-        log.info("sellMarketDepth Map "+ sellMarketDepth.map.toString());
-        log.info("sellMarketDepth 总量 "+ sellMarketDepth.total);
-        //log.info("get 1250 "+ marketDepth.map.ceilingKey(1250));
-        //log.info("get 111 "+ marketDepth.map.ceilingKey(111));
         return true;
     }
-    public SellStopOrder getSellStopOrder(){
-        if(redisHandler.get("sellStopOrder") == null){
+    public SellStopOrder getSellStopOrder(Integer productId){
+        if(redisHandler.get("sellStopOrder" + productId) == null){
             SellStopOrder sellStopOrder= new SellStopOrder();
             sellStopOrder.stopOrderMap = new TreeMap<>();
-            redisHandler.set("sellStopOrder" , JSONObject.toJSONString(sellStopOrder));
+            redisHandler.set("sellStopOrder" + productId, JSONObject.toJSONString(sellStopOrder));
             return sellStopOrder;
         }
         SellStopOrder sellStopOrder;
-        sellStopOrder = JSONObject.parseObject((String) redisHandler.get("sellStopOrder"), SellStopOrder.class);
+        sellStopOrder = JSONObject.parseObject((String) redisHandler.get("sellStopOrder" + productId), SellStopOrder.class);
 
         return sellStopOrder;
     }
-    public Boolean setSellStopOrder(SellStopOrder sellStopOrder){
+    public Boolean setSellStopOrder(SellStopOrder sellStopOrder, Integer productId){
         log.info("sellStopOrder存到redis");
-        redisHandler.set("sellStopOrder", JSONObject.toJSONString(sellStopOrder));
-
-        sellStopOrder = JSONObject.parseObject((String) redisHandler.get("sellStopOrder"), SellStopOrder.class);
         log.info("sellStopOrder结果 "+sellStopOrder.stopOrderMap.toString());
+        redisHandler.set("sellStopOrder" + productId, JSONObject.toJSONString(sellStopOrder));
+
         return true;
     }
-    public BuyStopOrder getBuyStopOrder(){
-        if(redisHandler.get("buyStopOrder") == null){
+    public BuyStopOrder getBuyStopOrder(Integer productId){
+        if(redisHandler.get("buyStopOrder" + productId) == null){
             BuyStopOrder buyStopOrder = new BuyStopOrder();
             buyStopOrder.stopOrderMap = new TreeMap<>();
-            redisHandler.set("buyStopOrder" , JSONObject.toJSONString(buyStopOrder));
+            redisHandler.set("buyStopOrder" + productId, JSONObject.toJSONString(buyStopOrder));
             return buyStopOrder;
         }
         BuyStopOrder buyStopOrder;
-        buyStopOrder = JSONObject.parseObject((String) redisHandler.get("buyStopOrder"), BuyStopOrder.class);
+        buyStopOrder = JSONObject.parseObject((String) redisHandler.get("buyStopOrder" + productId), BuyStopOrder.class);
 
         return buyStopOrder;
     }
-    public Boolean setBuyStopOrder(BuyStopOrder buyStopOrder){
+    public Boolean setBuyStopOrder(BuyStopOrder buyStopOrder, Integer productId){
         log.info("buyStopOrder存到redis");
-        redisHandler.set("buyStopOrder", JSONObject.toJSONString(buyStopOrder));
-
-        buyStopOrder = JSONObject.parseObject((String) redisHandler.get("sellStopOrder"), BuyStopOrder.class);
         log.info("buyStopOrder结果 "+buyStopOrder.stopOrderMap.toString());
+        redisHandler.set("buyStopOrder" + productId, JSONObject.toJSONString(buyStopOrder));
+
         return true;
     }
     public Boolean setOrderBlotter(Orderblotter orderblotter){
-        log.info("orderBlotter存到redis");
-        redisHandler.lSet("orderBlotter", orderblotter, 200);
+        log.info("orderBlotter存到redis" + orderblotter.toString());
+        //redisHandler.lSet("orderBlotter", orderblotter, 200);
+        orderblotter.setTradeid(getBlotterId());
+        redisHandler.lSet("orderBlotter", orderblotter);
         return true;
     }
-    public List<Object> getOrderBlotter(){
-        List<Object> orderBlotter;
-        orderBlotter =  redisHandler.lGet("orderBlotter", 0, redisHandler.lGetListSize("orderBlotter"));
-        List<Orderblotter> orderblotter;
-//        if(tmp instanceof List<Orderblotter>{
-//
-//        }
-//        orderblotter = (List<Orderblotter>)tmp;
-        log.info(((Orderblotter)orderBlotter.get(0)).getBroker());
+    public OrderBlotters getOrderBlotters(){
+        List<Object> objects;
+        objects =  redisHandler.lGet("orderBlotter", 0, redisHandler.lGetListSize("orderBlotter"));
+        OrderBlotters orderBlotters = new OrderBlotters();
+        ListIterator<Object> listIterator = objects.listIterator();
 
-        return orderBlotter;
+        Object o;
+        while(listIterator.hasNext()){
+            o = listIterator.next();
+            orderBlotters.orderblotters.add((Orderblotter)o);
+        }
+        log.info(orderBlotters.toString());
+        return orderBlotters;
     }
 }

@@ -349,7 +349,6 @@
         $(".main_page").css({"pointer-events":"auto","opacity":1});
     }
     function login(){
-        /*
         $.ajax({
             type:"GET",
             url:"http://localhost:8080",
@@ -360,11 +359,10 @@
               }
             }
         })
-        */
     }
     function register(){
         $.ajax({
-            type:"GET",
+            type:"POST",
             url:"http://localhost:8080",
             data:$("#form_register").serialize(),
             success:function(){

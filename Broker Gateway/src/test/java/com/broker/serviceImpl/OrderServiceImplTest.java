@@ -11,11 +11,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 
-@RunWith(SpringRunner.class)
+@RunWith(value = SpringRunner.class)
 @SpringBootTest
 public class OrderServiceImplTest {
     @Resource
-    private OrderServiceImpl orderService;
+    private OrderServiceImpl orderServiceImpl;
 
     @Resource
     RedisHandler redisHandler;
@@ -23,10 +23,9 @@ public class OrderServiceImplTest {
 
     @Before
     public void before() throws Exception {
-
-//        redisHandler.set("buyMarketDepth", null);
+  //   redisHandler.set("buyMarketDepth1", null);
 //        redisHandler.set("sellStopOrder", null);
-//        redisHandler.set("sellMarketDepth", null);
+  //      redisHandler.set("sellMarketDepth1", null);
 //        redisHandler.set("buyStopOrder", null);
     }
 
@@ -47,51 +46,97 @@ public class OrderServiceImplTest {
     public void buyMarketOrder() {
         Order order = new Order();
         order.setType("market");
-        order.setProductId(22);
-        order.setQuantity(63);
+        order.setProductId(1);
+        order.setQuantity(144);
         order.setBroker("broker");
 
-        orderService.buyMarketOrder(order);
+        orderServiceImpl.buyMarketOrder(order);
     }
 
     @Test
     public void buyLimitOrder() {
+        redisHandler.set("buyMarketDepth1", null);
+
         Order order = new Order();
-        order.setType("market");
-        order.setProductId(22);
-        order.setQuantity(90);
+        order.setType("limit");
+        order.setProductId(1);
+        order.setUsername("admin");
+        order.setQuantity(30);
         order.setBroker("broker");
         order.setPrice(1248);
-        orderService.buyLimitOrder(order);
+        order.setStrategy("iceburg");
+        orderServiceImpl.buyLimitOrder(order);
+        order = new Order();
+        order.setUsername("admin");
+        order.setType("limit");
+        order.setProductId(1);
+        order.setQuantity(30);
+        order.setBroker("broker");
+        order.setPrice(1248);
+        orderServiceImpl.buyLimitOrder(order);
+        order = new Order();
+        order.setUsername("admin");
+        order.setType("limit");
+        order.setProductId(1);
+        order.setQuantity(30);
+        order.setBroker("broker");
+        order.setPrice(1248);
+        orderServiceImpl.buyLimitOrder(order);
 
         order = new Order();
-        order.setType("market");
-        order.setProductId(22);
-        order.setQuantity(340);
+        order.setUsername("admin");
+        order.setType("limit");
+        order.setProductId(1);
+        order.setQuantity(120);
         order.setBroker("broker");
         order.setPrice(1246);
-        orderService.buyLimitOrder(order);
+        orderServiceImpl.buyLimitOrder(order);
+        order = new Order();
+        order.setUsername("admin");
+        order.setType("limit");
+        order.setProductId(1);
+        order.setQuantity(220);
+        order.setBroker("broker");
+        order.setPrice(1246);
+        orderServiceImpl.buyLimitOrder(order);
 
         order = new Order();
-        order.setType("market");
-        order.setProductId(22);
-        order.setQuantity(187);
+        order.setUsername("admin");
+        order.setType("limit");
+        order.setProductId(1);
+        order.setQuantity(97);
         order.setBroker("broker");
         order.setPrice(1244);
-        orderService.buyLimitOrder(order);
+        orderServiceImpl.buyLimitOrder(order);
+        order = new Order();
+        order.setUsername("admin");
+        order.setType("limit");
+        order.setProductId(1);
+        order.setQuantity(90);
+        order.setStrategy("iceburg");
+        order.setBroker("broker");
+        order.setPrice(1244);
+        orderServiceImpl.buyLimitOrder(order);
 
 
+//
+//        order = new Order();
+//        order.setType("market");
+//        order.setProductId(1);
+//        order.setQuantity(500);
+//        order.setBroker("broker");
+//        orderServiceImpl.sellMarketOrder(order);
     }
 
     @Test
     public void buyStopOrder() {
         Order order = new Order();
         order.setType("market");
-        order.setProductId(22);
+        order.setProductId(1);
         order.setQuantity(100);
         order.setBroker("broker");
         order.setPrice(1253);
-        orderService.buyStopOrder(order);
+        orderServiceImpl.buyStopOrder(order);
     }
 
     @Test
@@ -99,44 +144,84 @@ public class OrderServiceImplTest {
         Order order = new Order();
         order.setCancelId(4);
         order.setPrice(1250);
-        orderService.buyCancelOrder(order);
+        orderServiceImpl.cancelOrder(order);
     }
 
     @Test
     public void sellMarketOrder() {
         Order order = new Order();
         order.setType("market");
-        order.setProductId(22);
-        order.setQuantity(90);
+        order.setProductId(1);
+        order.setQuantity(400);
         order.setBroker("broker");
-        orderService.sellMarketOrder(order);
+        orderServiceImpl.sellMarketOrder(order);
     }
 
     @Test
     public void sellLimitOrder() {
         Order order = new Order();
-        order.setType("market");
-        order.setProductId(22);
-        order.setQuantity(50);
+        order.setType("limit");
+        order.setProductId(1);
+        order.setQuantity(25);
         order.setBroker("broker");
         order.setPrice(1250);
-        orderService.sellLimitOrder(order);
+        orderServiceImpl.sellLimitOrder(order);
+        order = new Order();
+        order.setType("limit");
+        order.setProductId(1);
+        order.setQuantity(25);
+        order.setBroker("broker");
+        order.setPrice(1250);
+        orderServiceImpl.sellLimitOrder(order);
 
         order = new Order();
-        order.setType("market");
-        order.setProductId(22);
-        order.setQuantity(32);
+        order.setType("limit");
+        order.setProductId(1);
+        order.setQuantity(30);
         order.setBroker("broker");
         order.setPrice(1252);
-        orderService.sellLimitOrder(order);
+        orderServiceImpl.sellLimitOrder(order);
+        order = new Order();
+        order.setType("limit");
+        order.setProductId(1);
+        order.setQuantity(2);
+        order.setBroker("broker");
+        order.setPrice(1252);
+        orderServiceImpl.sellLimitOrder(order);
 
         order = new Order();
-        order.setType("market");
-        order.setProductId(22);
-        order.setQuantity(127);
+        order.setType("limit");
+        order.setProductId(1);
+        order.setQuantity(30);
         order.setBroker("broker");
         order.setPrice(1254);
-        orderService.sellLimitOrder(order);
+        orderServiceImpl.sellLimitOrder(order);
+        order = new Order();
+        order.setType("limit");
+        order.setProductId(1);
+        order.setQuantity(30);
+        order.setBroker("broker");
+        order.setPrice(1254);
+        orderServiceImpl.sellLimitOrder(order);
+        order = new Order();
+        order.setType("limit");
+        order.setProductId(1);
+        order.setQuantity(30);
+        order.setBroker("broker");
+        order.setPrice(1254);
+        orderServiceImpl.sellLimitOrder(order);
+        order.setProductId(1);
+        order.setQuantity(30);
+        order.setBroker("broker");
+        order.setPrice(1254);
+        orderServiceImpl.sellLimitOrder(order);
+        order = new Order();
+        order.setType("limit");
+        order.setProductId(1);
+        order.setQuantity(7);
+        order.setBroker("broker");
+        order.setPrice(1254);
+        orderServiceImpl.sellLimitOrder(order);
 
     }
 
@@ -144,11 +229,11 @@ public class OrderServiceImplTest {
     public void sellStopOrder() {
         Order order = new Order();
         order.setType("market");
-        order.setProductId(22);
+        order.setProductId(1);
         order.setQuantity(20);
         order.setBroker("broker");
         order.setPrice(1246);
-        orderService.sellStopOrder(order);
+        orderServiceImpl.sellStopOrder(order);
     }
 
     @Test
@@ -165,6 +250,14 @@ public class OrderServiceImplTest {
 
     @Test
     public void sendOrderBlotter() {
-        orderService.sendOrderBlotter();
+    }
+
+    @Test
+    public void getMarketDepth() {
+        orderServiceImpl.getMarketDepth(1);
+    }
+
+    @Test
+    public void getMyOrder() {
     }
 }

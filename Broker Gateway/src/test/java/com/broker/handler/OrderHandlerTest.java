@@ -33,33 +33,15 @@ public class OrderHandlerTest {
     @After
     public void after() throws Exception {
     }
-    @Test
-    public void getBuyOrderId() {
-
-        assertEquals(1,orderHandler.getBuyOrderId() );
-        assertEquals(2,orderHandler.getBuyOrderId() );
-        assertEquals(3,orderHandler.getBuyOrderId() );
-        assertEquals(4,orderHandler.getBuyOrderId() );
-    }
-
-    @Test
-    public void getSellOrderId() {
-        assertEquals(1,orderHandler.getSellOrderId() );
-        assertEquals(2,orderHandler.getSellOrderId() );
-        assertEquals(3,orderHandler.getSellOrderId() );
-        assertEquals(4,orderHandler.getSellOrderId() );
-    }
-
-
 
     @Test
     public void getBuyMarketDepth() {
-        orderHandler.getBuyMarketDepth();
+        orderHandler.getBuyMarketDepth(1);
     }
 
     @Test
     public void getSellMarketDepth() {
-        orderHandler.getSellMarketDepth();
+        orderHandler.getSellMarketDepth(1);
     }
 
     @Test
@@ -72,7 +54,7 @@ public class OrderHandlerTest {
 
     @Test
     public void getSellStopOrder() {
-        orderHandler.getSellStopOrder();
+        orderHandler.getSellStopOrder(1);
     }
 
     @Test
@@ -81,7 +63,7 @@ public class OrderHandlerTest {
 
     @Test
     public void getBuyStopOrder() {
-        orderHandler.getBuyStopOrder();
+        orderHandler.getBuyStopOrder(1);
     }
 
     @Test
@@ -90,12 +72,10 @@ public class OrderHandlerTest {
 
     @Test
     public void setOrderBlotter() {
-        Orderblotter orderblotter = new Orderblotter(1, "broker", 1, new Date(), 123, 123, "trader", "buy", "rrrr", "sell");
-        orderHandler.setOrderBlotter(orderblotter);
     }
 
     @Test
     public void getOrderBlotter() {
-        orderHandler.getOrderBlotter();
+
     }
 }
